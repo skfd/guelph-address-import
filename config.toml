@@ -46,6 +46,11 @@ ward = "props:WARD"
 # Declaring it obliges the [units] policy below. (The props HAS_UNIT flag
 # disagrees with the unit column on ~277 rows; the column is authoritative.)
 unit = "unit"
+# STATUS is 'Active' on all 53,846 snapshot-39 rows. Declared same-day with
+# the engine's status capability (retrofit, 2026-08-15): a no-op today, but
+# if Guelph ever publishes Proposed/Pending rows they are filtered, not
+# imported.
+status = "props:STATUS"
 # Absent, verified against snapshot-39 props (19 keys, 2026-08-15): no
 # lo_num/hi_num ranges, no address_class. suffix_range therefore stays
 # undeclared below — the engine would refuse a config that enables it.
@@ -58,6 +63,9 @@ unit = "unit"
 # — civic-level intra-source duplicates worth a look during review.
 [units]
 policy = "collapse-to-civic"
+
+[status]
+active_values = ["Active"]
 
 [run_defaults]
 # Small downtown rectangle (around St. George's Square) for first test runs.
