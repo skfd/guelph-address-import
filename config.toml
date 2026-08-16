@@ -13,6 +13,9 @@ name = "Guelph"
 # CityBoundary (OpenData1/3, 1 polygon — the future 10-boundary-clipping.md
 # input, noted here so it isn't re-discovered).
 neighbourhoods_url = "https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/17/query?where=1%3D1&outFields=AREA_NAME,CSDNAME&outSR=4326&f=geojson"
+# Declared 2026-08-15 (engine contract change, 02-city-config-contract.md,
+# same day as the scaffold): field verified by the onboarding probe.
+neighbourhood_name_field = "AREA_NAME"
 
 [source]
 sqlite_path = "C:/Users/kk/Code/ontario-address-changes/data/guelph/guelph.db"
