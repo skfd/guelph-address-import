@@ -1,0 +1,126 @@
+[city]
+slug = "guelph"
+name = "Guelph"
+# "Guelph Areas": 23 community-area polygons on the city's self-hosted open
+# data server (the neighbourhood-fabric analogue of Toronto's 158 / Hamilton's
+# 234). Probed 2026-08-15 per 04-city-onboarding.md: point-test coverage
+# 99.47% of snapshot-39 addresses (287 orphans — 213 city edge cases plus 74
+# of the 75 'Guelph/Eramosa Twp' rows, which lie outside the city fabric by
+# construction). Name field is AREA_NAME (unique across all 23, no parent
+# prefix needed; first entry in the tile builder's sniff list); CSDNAME is the
+# constant 'Guelph'. 23 features fit one page under maxRecordCount = 1000.
+# The Hub search also surfaced Wards (6 polygons — too coarse) and
+# CityBoundary (OpenData1/3, 1 polygon — the future 10-boundary-clipping.md
+# input, noted here so it isn't re-discovered).
+neighbourhoods_url = "https://gismaps.guelph.ca/hosting/rest/services/OpenData/OpenData2/FeatureServer/17/query?where=1%3D1&outFields=AREA_NAME,CSDNAME&outSR=4326&f=geojson"
+
+[source]
+sqlite_path = "C:/Users/kk/Code/ontario-address-changes/data/guelph/guelph.db"
+
+# Per-city projection recipe (multi-city Tier 2), measured against snapshot 39
+# (2026-08-13, 53,846 active rows, all STATUS='Active').
+[source_fields]
+# FULLNAME is the tracker's canonical street: 100% typed and already OSM long
+# form ("Cork Street West"), so expand_street_name() is a no-op here.
+street_from = "street"
+# NOT "full": Guelph's ADDRESS column appends the unit ("12-100 Main St"),
+# which inflated the survey's first distinct count 40,634 -> 53,706 (the trap
+# documented in 08-survey-results-2026-08-12.md). Synthesize instead.
+full_from = "number+street"
+# PLACE is 'Guelph' on 53,771 rows and 'Guelph/Eramosa Twp' on 75 — the one
+# subdivision the city layer publishes past its own boundary (NE corner;
+# Wellington's dataset carries the same 73-75 addresses, the only genuine
+# source overlap found by the census). Nearly constant, so unlike Hamilton's
+# COMMUNITY it adds nothing to dedup keying — declared for review display and
+# so the township rows stay distinguishable until TODO §5 routes them to
+# Wellington.
+municipality = "props:PLACE"
+# Integer 1-6, populated on 53,771 rows (99.86%) — empty exactly on the 75
+# township rows. First city to declare ward since Toronto (whose WARD_NAME is
+# a string; watch how the run UI formats an int).
+ward = "props:WARD"
+# Tracker canonical column (source UNIT_NO), populated on 13,162 rows (24.4%).
+# Declaring it obliges the [units] policy below. (The props HAS_UNIT flag
+# disagrees with the unit column on ~277 rows; the column is authoritative.)
+unit = "unit"
+# Absent, verified against snapshot-39 props (19 keys, 2026-08-15): no
+# lo_num/hi_num ranges, no address_class. suffix_range therefore stays
+# undeclared below — the engine would refuse a config that enables it.
+
+# Same decision as Hamilton (09-units.md option 2): collapse to one candidate
+# per civic address, defer unit-level import. Measured 2026-08-15 on snapshot
+# 39: 53,846 rows -> 40,634 civic groups keyed on (number, street, PLACE);
+# 514 groups are stacked (deepest 214 units), 80 of those have no unit-less
+# row to elect (lowest identity_key then). 111 groups carry >1 unit-less rows
+# — civic-level intra-source duplicates worth a look during review.
+[units]
+policy = "collapse-to-civic"
+
+[run_defaults]
+# Small downtown rectangle (around St. George's Square) for first test runs.
+bbox = [43.538, -80.256, 43.550, -80.244]
+overpass_url = "https://overpass-api.de/api/interpreter"
+
+[osm]
+source = "local"
+# Same Ontario PBF as every city in the portfolio.
+pbf_url = "https://download.geofabrik.de/north-america/canada/ontario-latest.osm.pbf"
+# Source-data extent (53,846 rows measured 2026-08-15: lat 43.4748..43.58629,
+# lon -80.32545..-80.15481) plus a small margin. Guelph is a separated city
+# wholly inside Wellington County — the rectangle inevitably catches township
+# addresses in the corners (7,818 OSM-side extras in the 2026-08-10 survey
+# were mostly this); see 10-boundary-clipping.md, and the CityBoundary layer
+# noted under [city] above.
+city_bbox = [43.46, -80.34, 43.60, -80.14]
+extract_dir = "data/osm"
+
+[conflation]
+match_radius_m = 100
+match_near_m = 15
+
+[checks]
+match_far = true
+# suffix_range deliberately absent: it reads lo_num/hi_num, which Guelph's
+# source does not have ([source_fields] declares none).
+city_duplicate = true
+missing_sample = true
+nearby_street_mismatch = true
+
+[check_params.city_duplicate]
+radius_m = 3.0
+
+[check_params.missing_sample]
+every_nth = 50
+
+[check_params.nearby_street_mismatch]
+radius_m = 20.0
+
+[check_params.match_number_drift]
+slack_m = 2.0
+
+[upload]
+changesets_per_minute = 1
+changeset_comment_template = "{city} Open Data address import, run={run_name}"
+
+[export]
+attribution = "City of Guelph Open Data"
+# Deliberately empty and expected to STAY empty: Guelph is brownfield-complete
+# (see README). The prior import's wiki page belongs to its author — do not
+# reuse it, and do not write a competing proposal for a ~2.5k-address gap.
+# Any eventual upload happens in coordination with them, not under a new plan.
+import_plan = ""
+
+# The prior import's tag mapping (05-prior-import-detection.md, "What to
+# capture in config"). NOT read by the engine yet — the [prior_import]
+# contract is proposed, not implemented — kept here as the load-bearing record
+# anything we upload must stay consistent with. Established 2026-08-10 from
+# changeset 173187168 and the wiki page.
+[prior_import]
+importer = "ARandomThumbtack_Import"
+wiki_page = "https://wiki.openstreetmap.org/wiki/Guelph/Address_Import"
+declared_complete = "2025-10-23"
+source_name = "Guelph Open Data"
+source_license = "OGL-Canada-2.0"
+# Source field -> OSM tag, as the prior import wrote them. addr:province was
+# added as a constant "Ontario".
+tag_mapping = { STREETNO = "addr:housenumber", FULLNAME = "addr:street", PLACE = "addr:city", POSTCODE = "addr:postcode", UNIT_NO = "addr:unit" }
