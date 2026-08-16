@@ -28,6 +28,14 @@ at snapshot 39, 2026-08-13). 24.4% of rows carry units, collapsed to civic per
 the `[units]` policy. Tiles subdivide the city's 23 "Guelph Areas" polygons
 (99.47% point coverage, probed 2026-08-15).
 
+Entry state re-confirmed 2026-08-15 by `scripts/entry_state_probe.py`
+(evidence: `onboarding/entry-state-2026-08-15.json`): the importer holds 85.6%
+of sampled elements, 2026 activity is 49 elements and the latest 100
+changesets carry no import tags — complete and quiet, not active. Tag
+conventions to stay consistent with: `addr:province=Ontario` (3,699 vs 178
+`ON`), postcode on the dominant combo, 725 sampled elements already carry
+`addr:unit`.
+
 Baseline conflation runs in full regardless of entry state (house rule —
 entering a brownfield city in maintenance-only mode inherits prior errors
 invisibly). Expect the review queue to be MATCH/MATCH_FAR-dominated, the

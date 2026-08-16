@@ -1,0 +1,2049 @@
+{
+  "city": "guelph",
+  "bbox": [
+    43.4748,
+    -80.32545,
+    43.58629,
+    -80.15481
+  ],
+  "per_box": {
+    "downtown": {
+      "elements": 1354,
+      "users": [
+        [
+          "ARandomThumbtack_Import",
+          894
+        ],
+        [
+          "Coehill",
+          145
+        ],
+        [
+          "Matthew Darwin",
+          62
+        ],
+        [
+          "saun-ders",
+          45
+        ],
+        [
+          "eireidium",
+          44
+        ],
+        [
+          "ARandomThumbtack",
+          22
+        ],
+        [
+          "crosstato",
+          21
+        ],
+        [
+          "TristanA",
+          20
+        ]
+      ],
+      "years": [
+        [
+          "2015",
+          1
+        ],
+        [
+          "2016",
+          21
+        ],
+        [
+          "2018",
+          64
+        ],
+        [
+          "2019",
+          1
+        ],
+        [
+          "2020",
+          7
+        ],
+        [
+          "2021",
+          9
+        ],
+        [
+          "2022",
+          12
+        ],
+        [
+          "2023",
+          15
+        ],
+        [
+          "2024",
+          81
+        ],
+        [
+          "2025",
+          1103
+        ],
+        [
+          "2026",
+          40
+        ]
+      ]
+    },
+    "south-end": {
+      "elements": 1698,
+      "users": [
+        [
+          "ARandomThumbtack_Import",
+          1611
+        ],
+        [
+          "Matthew Darwin",
+          31
+        ],
+        [
+          "Mojgan Jadidi",
+          23
+        ],
+        [
+          "skfd",
+          9
+        ],
+        [
+          "crosstato",
+          8
+        ],
+        [
+          "Coehill",
+          8
+        ],
+        [
+          "andrewpmk",
+          2
+        ],
+        [
+          "Stuart_L",
+          2
+        ]
+      ],
+      "years": [
+        [
+          "2016",
+          23
+        ],
+        [
+          "2018",
+          31
+        ],
+        [
+          "2020",
+          1
+        ],
+        [
+          "2021",
+          5
+        ],
+        [
+          "2022",
+          2
+        ],
+        [
+          "2023",
+          3
+        ],
+        [
+          "2024",
+          2
+        ],
+        [
+          "2025",
+          1622
+        ],
+        [
+          "2026",
+          9
+        ]
+      ]
+    },
+    "west-end": {
+      "elements": 1192,
+      "users": [
+        [
+          "ARandomThumbtack_Import",
+          1130
+        ],
+        [
+          "Matthew Darwin",
+          21
+        ],
+        [
+          "crosstato",
+          18
+        ],
+        [
+          "Coehill",
+          8
+        ],
+        [
+          "Mojgan Jadidi",
+          4
+        ],
+        [
+          "andrewpmk",
+          3
+        ],
+        [
+          "saun-ders",
+          2
+        ],
+        [
+          "Mateusz Konieczny - bot account - ATP import",
+          1
+        ]
+      ],
+      "years": [
+        [
+          "2016",
+          4
+        ],
+        [
+          "2018",
+          20
+        ],
+        [
+          "2019",
+          1
+        ],
+        [
+          "2020",
+          1
+        ],
+        [
+          "2021",
+          11
+        ],
+        [
+          "2022",
+          4
+        ],
+        [
+          "2023",
+          8
+        ],
+        [
+          "2024",
+          2
+        ],
+        [
+          "2025",
+          1141
+        ]
+      ]
+    }
+  },
+  "users": [
+    [
+      "ARandomThumbtack_Import",
+      3635
+    ],
+    [
+      "Coehill",
+      161
+    ],
+    [
+      "Matthew Darwin",
+      114
+    ],
+    [
+      "crosstato",
+      47
+    ],
+    [
+      "saun-ders",
+      47
+    ],
+    [
+      "eireidium",
+      44
+    ],
+    [
+      "Mojgan Jadidi",
+      30
+    ],
+    [
+      "ARandomThumbtack",
+      22
+    ],
+    [
+      "TristanA",
+      20
+    ],
+    [
+      "skfd",
+      16
+    ],
+    [
+      "Stuart_L",
+      14
+    ],
+    [
+      "andrewpmk",
+      13
+    ],
+    [
+      "jfvoll",
+      11
+    ],
+    [
+      "torapa",
+      8
+    ],
+    [
+      "b-jazz-bot",
+      8
+    ],
+    [
+      "FreshlyTweezed",
+      4
+    ],
+    [
+      "riuri",
+      3
+    ],
+    [
+      "DannyMcD",
+      3
+    ],
+    [
+      "awaterwell",
+      3
+    ],
+    [
+      "UnusualWorld",
+      2
+    ],
+    [
+      "permute",
+      2
+    ],
+    [
+      "rinimt",
+      2
+    ],
+    [
+      "dalmond",
+      2
+    ],
+    [
+      "Net-net",
+      2
+    ],
+    [
+      "CjMalone",
+      2
+    ],
+    [
+      "canadasam",
+      2
+    ],
+    [
+      "Metroscapes",
+      2
+    ],
+    [
+      "Fxvxbvbcbc",
+      2
+    ],
+    [
+      "lastcommodore",
+      1
+    ],
+    [
+      "idunno101",
+      1
+    ],
+    [
+      "SWF8",
+      1
+    ],
+    [
+      "Jan Willamowius",
+      1
+    ],
+    [
+      "Richard Zeng",
+      1
+    ],
+    [
+      "egli",
+      1
+    ],
+    [
+      "Vancouver Brad",
+      1
+    ],
+    [
+      "Allisongechter",
+      1
+    ],
+    [
+      "Rhodez",
+      1
+    ],
+    [
+      "ToddRWalker",
+      1
+    ],
+    [
+      "AtlasJude90",
+      1
+    ],
+    [
+      "Lumikeiju",
+      1
+    ],
+    [
+      "NewBGoose",
+      1
+    ],
+    [
+      "Pernycek",
+      1
+    ],
+    [
+      "catgirlseraid",
+      1
+    ],
+    [
+      "Daniel Waters GuelphTrails",
+      1
+    ],
+    [
+      "jostal",
+      1
+    ],
+    [
+      "galen8183",
+      1
+    ],
+    [
+      "iwismer",
+      1
+    ],
+    [
+      "Mateusz Konieczny - bot account - ATP import",
+      1
+    ],
+    [
+      "Hanna Markovich",
+      1
+    ],
+    [
+      "fbax",
+      1
+    ],
+    [
+      "mtmail",
+      1
+    ]
+  ],
+  "years": [
+    [
+      "2015",
+      1
+    ],
+    [
+      "2016",
+      48
+    ],
+    [
+      "2018",
+      115
+    ],
+    [
+      "2019",
+      2
+    ],
+    [
+      "2020",
+      9
+    ],
+    [
+      "2021",
+      25
+    ],
+    [
+      "2022",
+      18
+    ],
+    [
+      "2023",
+      26
+    ],
+    [
+      "2024",
+      85
+    ],
+    [
+      "2025",
+      3866
+    ],
+    [
+      "2026",
+      49
+    ]
+  ],
+  "kinds": {
+    "node": 730,
+    "way": 3514
+  },
+  "changesets": [
+    {
+      "id": 173513407,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-10-19T23:30:06Z",
+      "changes": 7729,
+      "tags": {
+        "comment": "Updating addresses for ArkellGordon-ClairVictoria",
+        "created_by": "JOSM/1.5 (19439 en_CA)",
+        "import": "yes",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 1227
+    },
+    {
+      "id": 173187168,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-10-12T15:30:00Z",
+      "changes": 10000,
+      "tags": {
+        "comment": "Updating addresses for WillowElmira-WoolwichEdinburgh",
+        "created_by": "JOSM/1.5 (19439 en_CA)",
+        "import": "yes",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 630
+    },
+    {
+      "id": 173119947,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-10-11T03:23:47Z",
+      "changes": 4325,
+      "tags": {
+        "comment": "Updating addresses for SpeedvaleElmira-HanlonWillow",
+        "created_by": "JOSM/1.5 (19439 en_CA)",
+        "import": "yes",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 500
+    },
+    {
+      "id": 172228504,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-09-21T03:20:18Z",
+      "changes": 463,
+      "tags": {
+        "comment": "Updating Downtown (WoolwichNorfolk-GordonWoolwich) Addresses",
+        "created_by": "JOSM/1.5 (19342 en_CA)",
+        "import": "yes",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 357
+    },
+    {
+      "id": 173388714,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-10-17T01:16:58Z",
+      "changes": 2500,
+      "tags": {
+        "comment": "Updated addresses for ClairfieldsGordon-Hanlon",
+        "created_by": "JOSM/1.5 (19439 en_CA)",
+        "import": "yes",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 319
+    },
+    {
+      "id": 172078824,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-09-17T17:52:58Z",
+      "changes": 990,
+      "tags": {
+        "comment": "Updating EdinburghWaterloo-GordonWoolwich",
+        "created_by": "JOSM/1.5 (19342 en_CA)",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "mport": "yes",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 202
+    },
+    {
+      "id": 172042693,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-09-17T04:18:39Z",
+      "changes": 560,
+      "tags": {
+        "comment": "Updating EdinburghPaisley-GordonWaterloo Addreesses",
+        "created_by": "JOSM/1.5 (19342 en_CA)",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "mport": "yes",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 178
+    },
+    {
+      "id": 172319903,
+      "user": "ARandomThumbtack_Import",
+      "created_at": "2025-09-23T00:49:45Z",
+      "changes": 1872,
+      "tags": {
+        "comment": "Updating WoolwichEramosa-VictoriaElizabeth Addresses",
+        "created_by": "JOSM/1.5 (19342 en_CA)",
+        "import": "yes",
+        "import:page": "https://wiki.openstreetmap.org/w/index.php?title=Guelph/Address_Import",
+        "source": "Guelph Open Data",
+        "source:license": "OGL-Canada-2.0",
+        "source:url": "https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore"
+      },
+      "sampled_elements": 126
+    }
+  ],
+  "conventions": {
+    "sampled": 4244,
+    "keys": [
+      [
+        "addr:housenumber",
+        4244
+      ],
+      [
+        "addr:street",
+        4238
+      ],
+      [
+        "addr:city",
+        4111
+      ],
+      [
+        "addr:province",
+        3878
+      ],
+      [
+        "addr:postcode",
+        3773
+      ],
+      [
+        "building",
+        3478
+      ],
+      [
+        "source",
+        1514
+      ],
+      [
+        "addr:unit",
+        796
+      ],
+      [
+        "name",
+        339
+      ],
+      [
+        "building:levels",
+        187
+      ],
+      [
+        "website",
+        167
+      ],
+      [
+        "amenity",
+        151
+      ],
+      [
+        "phone",
+        128
+      ],
+      [
+        "shop",
+        113
+      ],
+      [
+        "opening_hours",
+        100
+      ],
+      [
+        "check_date",
+        81
+      ],
+      [
+        "cuisine",
+        53
+      ],
+      [
+        "wheelchair",
+        40
+      ],
+      [
+        "brand",
+        40
+      ],
+      [
+        "brand:wikidata",
+        39
+      ],
+      [
+        "roof:shape",
+        33
+      ],
+      [
+        "email",
+        31
+      ],
+      [
+        "healthcare",
+        29
+      ],
+      [
+        "brand:wikipedia",
+        28
+      ],
+      [
+        "roof:levels",
+        28
+      ]
+    ],
+    "values": {
+      "addr:city": [
+        [
+          "Guelph",
+          4110
+        ],
+        [
+          "Gueph",
+          1
+        ]
+      ],
+      "addr:country": [
+        [
+          "CA",
+          11
+        ]
+      ],
+      "addr:door": [
+        [
+          "406",
+          1
+        ]
+      ],
+      "addr:flats": [
+        [
+          "101-106;201-206;301-306",
+          1
+        ]
+      ],
+      "addr:floor": [
+        [
+          "2",
+          1
+        ]
+      ],
+      "addr:housename": [
+        [
+          "Wellington Court House / Chamber",
+          1
+        ]
+      ],
+      "addr:housenumber": [
+        [
+          "5",
+          62
+        ],
+        [
+          "15",
+          57
+        ],
+        [
+          "18",
+          55
+        ],
+        [
+          "20",
+          53
+        ],
+        [
+          "21",
+          53
+        ],
+        [
+          "17",
+          51
+        ],
+        [
+          "10",
+          50
+        ],
+        [
+          "11",
+          50
+        ]
+      ],
+      "addr:interpolation": [
+        [
+          "all",
+          12
+        ]
+      ],
+      "addr:postcode": [
+        [
+          "N1G 5K6",
+          88
+        ],
+        [
+          "N1L 0R2",
+          84
+        ],
+        [
+          "N1H 8B4",
+          76
+        ],
+        [
+          "N1H 7G3",
+          69
+        ],
+        [
+          "N1L 1M7",
+          64
+        ],
+        [
+          "N1L 1P5",
+          48
+        ],
+        [
+          "N1L 1C7",
+          45
+        ],
+        [
+          "N1G 5L5",
+          45
+        ]
+      ],
+      "addr:province": [
+        [
+          "Ontario",
+          3699
+        ],
+        [
+          "ON",
+          178
+        ],
+        [
+          "On",
+          1
+        ]
+      ],
+      "addr:street": [
+        [
+          "Farley Drive",
+          183
+        ],
+        [
+          "Willow Road",
+          183
+        ],
+        [
+          "Gordon Street",
+          176
+        ],
+        [
+          "Ferman Drive",
+          151
+        ],
+        [
+          "Imperial Road North",
+          142
+        ],
+        [
+          "Imperial Road South",
+          138
+        ],
+        [
+          "Gosling Gardens",
+          131
+        ],
+        [
+          "Wyndham Street North",
+          125
+        ]
+      ],
+      "addr:unit": [
+        [
+          "2",
+          17
+        ],
+        [
+          "8",
+          17
+        ],
+        [
+          "1",
+          16
+        ],
+        [
+          "10",
+          16
+        ],
+        [
+          "12",
+          15
+        ],
+        [
+          "5",
+          14
+        ],
+        [
+          "4",
+          14
+        ],
+        [
+          "3",
+          14
+        ]
+      ],
+      "building": [
+        [
+          "yes",
+          2354
+        ],
+        [
+          "detached",
+          499
+        ],
+        [
+          "house",
+          170
+        ],
+        [
+          "retail",
+          106
+        ],
+        [
+          "residential",
+          95
+        ],
+        [
+          "terrace",
+          94
+        ],
+        [
+          "semidetached_house",
+          66
+        ],
+        [
+          "apartments",
+          32
+        ]
+      ],
+      "source": [
+        [
+          "microsoft/BuildingFootprints",
+          1234
+        ],
+        [
+          "NRCan-CanVec-10.0",
+          110
+        ],
+        [
+          "Bing",
+          92
+        ],
+        [
+          "StatCan 92-500-X",
+          35
+        ],
+        [
+          "NRCan-CanVec-8.0",
+          24
+        ],
+        [
+          "Mapillary",
+          4
+        ],
+        [
+          "local knowledge",
+          3
+        ],
+        [
+          "survey",
+          3
+        ]
+      ]
+    },
+    "addr_combos": [
+      [
+        "addr:city+addr:housenumber+addr:postcode+addr:province+addr:street",
+        2967
+      ],
+      [
+        "addr:city+addr:housenumber+addr:postcode+addr:province+addr:street+addr:unit",
+        725
+      ],
+      [
+        "addr:city+addr:housenumber+addr:street",
+        187
+      ],
+      [
+        "addr:city+addr:housenumber+addr:province+addr:street",
+        114
+      ],
+      [
+        "addr:housenumber+addr:street",
+        109
+      ],
+      [
+        "addr:city+addr:housenumber+addr:province+addr:street+addr:unit",
+        47
+      ],
+      [
+        "addr:city+addr:housenumber+addr:postcode+addr:street",
+        40
+      ],
+      [
+        "addr:housenumber+addr:postcode+addr:street",
+        11
+      ]
+    ]
+  },
+  "wiki": {
+    "Guelph/Address_Import": {
+      "exists": true,
+      "chars": 5035,
+      "mentions_address": 15,
+      "mentions_import": 19,
+      "head": "__FORCETOC__\n----\n\n'''GuelphAddressImport''' is an import of the [https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore Addresses] dataset, covering the city of Guelph, Ontario, [[Canada]].  The import is considered complete as of 23th October 2025. Link to the repository can be found [https://codeberg.org/thumbtacks/guelph-osm-import here].\n\n==Goals==\n\nTo update the buildings in Gu"
+    },
+    "Canada:Ontario:Guelph": {
+      "exists": false
+    }
+  },
+  "recent_changesets": [
+    {
+      "id": "187512203",
+      "user": "Thomasje",
+      "created_at": "2026-08-15T23:50:40Z",
+      "changes": 16,
+      "comment": "Dutch localizations timezones",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187449091",
+      "user": "Hensor",
+      "created_at": "2026-08-14T15:20:38Z",
+      "changes": 23,
+      "comment": "puse un edificio en alaska",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187430289",
+      "user": "woodpeck",
+      "created_at": "2026-08-14T09:11:47Z",
+      "changes": 190,
+      "comment": "delete historic=battlefield added by Jobigutenburg, see https://www.openstreetmap.org/changeset/179566483",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187423545",
+      "user": "rollercoasting",
+      "created_at": "2026-08-14T06:23:23Z",
+      "changes": 16,
+      "comment": "Add comprehensive Japanese localization (name:ja, ja-Latn, ja-Kana, ja-Hira) and alt_names to major continent and ocean nodes",
+      "source": "standard geographic names; ALA-LC Romanization of Japanese",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187418869",
+      "user": "alokchauhan_Lyft",
+      "created_at": "2026-08-14T02:13:15Z",
+      "changes": 9,
+      "comment": "Added turn:lanes and modified lanes tags on the intersection according to the Lyft-owned street-level imagery.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187409990",
+      "user": "marvin3",
+      "created_at": "2026-08-13T19:54:58Z",
+      "changes": 12,
+      "comment": "Spelling of Output-Power corrected.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187401530",
+      "user": "skfd",
+      "created_at": "2026-08-13T16:40:00Z",
+      "changes": 26,
+      "comment": "residential area",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187401300",
+      "user": "skfd",
+      "created_at": "2026-08-13T16:34:01Z",
+      "changes": 22,
+      "comment": "remove duplicate address parts -- leave only the units",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187401072",
+      "user": "skfd",
+      "created_at": "2026-08-13T16:29:06Z",
+      "changes": 24,
+      "comment": "residential area",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187387216",
+      "user": "rsitoni_Lyft",
+      "created_at": "2026-08-13T12:15:14Z",
+      "changes": 14,
+      "comment": "Added missing roads according to Bing aerial imagery",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187378660",
+      "user": "Idahooligan-1",
+      "created_at": "2026-08-13T09:05:36Z",
+      "changes": 22,
+      "comment": "Created 3 benches, 3 unknown objects, and 5 other objects; Updated 4 shelters, 3 restaurants, and 4 other objects",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187375478",
+      "user": "tkotnala_lyft",
+      "created_at": "2026-08-13T08:00:42Z",
+      "changes": 1,
+      "comment": "Removed one way according to Lyft-owned aerial imagery.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187368941",
+      "user": "confusedbuffalo-bot",
+      "created_at": "2026-08-13T04:10:05Z",
+      "changes": 5,
+      "comment": "Ontario (Canada): Automatically fix phone number issues: missing country code, extra punctuation",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187366147",
+      "user": "crosstato",
+      "created_at": "2026-08-13T01:00:09Z",
+      "changes": 1,
+      "comment": "added name to ruins, slightly adjusted area",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187366037",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:55:10Z",
+      "changes": 35,
+      "comment": "marked paths in old growth forest area as no bikes allowed, as per sign on fence.",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365965",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:51:08Z",
+      "changes": 21,
+      "comment": "added stile and gate and fence. readjusted path through stile",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365788",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:43:01Z",
+      "changes": 32,
+      "comment": "changed building tag to picnic shelter, added paths and garden area",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365750",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:40:17Z",
+      "changes": 28,
+      "comment": "removed circular footpath and replaced with grass area. added name to grass area",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365703",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:37:09Z",
+      "changes": 16,
+      "comment": "added circle path around tree near old growth forest",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365613",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:31:16Z",
+      "changes": 1,
+      "comment": "added name to observation deck",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365579",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:28:39Z",
+      "changes": 14,
+      "comment": "adjusted creek way",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365550",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:26:49Z",
+      "changes": 1,
+      "comment": "Adjusted ruins location, added name",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365503",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:24:40Z",
+      "changes": 10,
+      "comment": "added observation deck to old growth forest area",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365405",
+      "user": "crosstato",
+      "created_at": "2026-08-13T00:17:16Z",
+      "changes": 252,
+      "comment": "added, and refined footpaths near old growth forest",
+      "source": "aerial imagery;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187365074",
+      "user": "crosstato",
+      "created_at": "2026-08-12T23:57:34Z",
+      "changes": 107,
+      "comment": "updated tracing of river",
+      "source": "aerial imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187364752",
+      "user": "crosstato",
+      "created_at": "2026-08-12T23:38:40Z",
+      "changes": 7,
+      "comment": "added informal paths near old growth forest",
+      "source": "gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187364611",
+      "user": "crosstato",
+      "created_at": "2026-08-12T23:29:03Z",
+      "changes": 83,
+      "comment": "added new footpath to woodlawn cemetary",
+      "source": "local knowledge;aerial imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187350970",
+      "user": "Daniel Waters GuelphTrails",
+      "created_at": "2026-08-12T16:49:46Z",
+      "changes": 7,
+      "comment": "Updates to trails based on land management plan and trail closures.",
+      "source": "local knowledge",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345941",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:12:09Z",
+      "changes": 1,
+      "comment": "Specify whether kerbs have tactile paving",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345939",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:12:04Z",
+      "changes": 1,
+      "comment": "Determine the heights of kerbs",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345884",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:11:30Z",
+      "changes": 1,
+      "comment": "Specify road surfaces",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345611",
+      "user": "VLD082",
+      "created_at": "2026-08-12T15:06:39Z",
+      "changes": 30,
+      "comment": "Added/updated crossings #dataupdate",
+      "source": "aerial imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345539",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:04:56Z",
+      "changes": 4,
+      "comment": "Specify whether parking requires a fee",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345536",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:04:52Z",
+      "changes": 1,
+      "comment": "Specify parking access",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345523",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:04:43Z",
+      "changes": 4,
+      "comment": "Specify parking types",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345474",
+      "user": "i_e_leibowitz",
+      "created_at": "2026-08-12T15:04:09Z",
+      "changes": 2,
+      "comment": "Specify path surfaces",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187345364",
+      "user": "VLD082",
+      "created_at": "2026-08-12T15:02:18Z",
+      "changes": 55,
+      "comment": "Added/updated crossings #dataupdate",
+      "source": "aerial imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187341365",
+      "user": "API_SIS67_FME",
+      "created_at": "2026-08-12T13:40:00Z",
+      "changes": 3,
+      "comment": "Renseignement de l'adresse pr\u00e9cise sur le b\u00e2timent de la caserne",
+      "source": "SIS67",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187315013",
+      "user": "skfd",
+      "created_at": "2026-08-12T02:27:47Z",
+      "changes": 7,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187314786",
+      "user": "skfd",
+      "created_at": "2026-08-12T02:14:57Z",
+      "changes": 1,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187314300",
+      "user": "skfd",
+      "created_at": "2026-08-12T01:41:45Z",
+      "changes": 1,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187312625",
+      "user": "skfd",
+      "created_at": "2026-08-12T00:03:14Z",
+      "changes": 2,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187312606",
+      "user": "skfd",
+      "created_at": "2026-08-12T00:02:11Z",
+      "changes": 11,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187312556",
+      "user": "skfd",
+      "created_at": "2026-08-11T23:58:00Z",
+      "changes": 1,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187312422",
+      "user": "skfd",
+      "created_at": "2026-08-11T23:48:41Z",
+      "changes": 1,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187312414",
+      "user": "skfd",
+      "created_at": "2026-08-11T23:47:53Z",
+      "changes": 1,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187312352",
+      "user": "skfd",
+      "created_at": "2026-08-11T23:44:48Z",
+      "changes": 2,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187311556",
+      "user": "billargo",
+      "created_at": "2026-08-11T22:57:05Z",
+      "changes": 1,
+      "comment": "added province",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187311353",
+      "user": "crosstato",
+      "created_at": "2026-08-11T22:48:12Z",
+      "changes": 3,
+      "comment": "marked path as seasonal (winter) because traverses wetlands",
+      "source": "aerial imagery;local knowledge",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187311159",
+      "user": "crosstato",
+      "created_at": "2026-08-11T22:39:51Z",
+      "changes": 4,
+      "comment": "combined paths to update access tags",
+      "source": "local knowledge;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187311107",
+      "user": "crosstato",
+      "created_at": "2026-08-11T22:38:14Z",
+      "changes": 61,
+      "comment": "updated wetland area in ellis creek area",
+      "source": "local knowledge;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187311062",
+      "user": "skfd",
+      "created_at": "2026-08-11T22:35:51Z",
+      "changes": 39,
+      "comment": "allowed to walk around cemetery",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187311022",
+      "user": "billargo",
+      "created_at": "2026-08-11T22:34:16Z",
+      "changes": 1,
+      "comment": "changed hours, cuisines, description",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187310901",
+      "user": "crosstato",
+      "created_at": "2026-08-11T22:28:49Z",
+      "changes": 27,
+      "comment": "adjusted informal path through ellis creek area",
+      "source": "local knowledge;gps;survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187295209",
+      "user": "sbedwal_Lyft",
+      "created_at": "2026-08-11T16:11:26Z",
+      "changes": 6,
+      "comment": "Added missing roads according to Bing aerial imagery",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187286846",
+      "user": "886b9fe5df",
+      "created_at": "2026-08-11T13:41:30Z",
+      "changes": 1,
+      "comment": "Automatically generated summary",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187282487",
+      "user": "CjMalone",
+      "created_at": "2026-08-11T12:22:03Z",
+      "changes": 89,
+      "comment": "Add Mucho Burrito website",
+      "source": "Mucho Burrito website",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187271845",
+      "user": "tkotnala_lyft",
+      "created_at": "2026-08-11T08:51:12Z",
+      "changes": 6,
+      "comment": "Added missing roads according to Esri World Imagery (Clarity) Beta.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187260486",
+      "user": "skfd",
+      "created_at": "2026-08-11T02:44:32Z",
+      "changes": 1,
+      "comment": "surveying with gomap",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187234536",
+      "user": "Vi2727",
+      "created_at": "2026-08-10T14:07:49Z",
+      "changes": 13,
+      "comment": "Fixed \"privateq\" to private (USA)",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187219005",
+      "user": "user_5589",
+      "created_at": "2026-08-10T09:04:42Z",
+      "changes": 2,
+      "comment": "Fixed with Osmose",
+      "source": "Osmose",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187216106",
+      "user": "mueschel",
+      "created_at": "2026-08-10T08:03:26Z",
+      "changes": 33,
+      "comment": "remove 'way:creation' tags added by Pucciotrex30. No response to changeset comment",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187209584",
+      "user": "FreshlyTweezed",
+      "created_at": "2026-08-10T04:42:50Z",
+      "changes": 81,
+      "comment": "Ontario: Fix opening hours issues",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187208418",
+      "user": "confusedbuffalo-bot",
+      "created_at": "2026-08-10T03:38:47Z",
+      "changes": 5,
+      "comment": "Ontario (Canada): Automatically fix phone number issues: missing country code, extra punctuation",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187202595",
+      "user": "skfd",
+      "created_at": "2026-08-09T21:53:37Z",
+      "changes": 2,
+      "comment": "surveying with gomap",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187198533",
+      "user": "bizunachou",
+      "created_at": "2026-08-09T19:51:41Z",
+      "changes": 1077,
+      "comment": "Map all 27 fairways for The Lakes, The Pines, and The Valley at Victoria Park Valley Golf Club",
+      "source": "Bing Maps Aerial; Victoria Park Valley official scorecard and hole-layout sheets",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187190791",
+      "user": "FreshlyTweezed",
+      "created_at": "2026-08-09T17:04:15Z",
+      "changes": 43,
+      "comment": "Ontario: Fix opening hours issues",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187161311",
+      "user": "FreshlyTweezed",
+      "created_at": "2026-08-09T05:06:07Z",
+      "changes": 200,
+      "comment": "Ontario: Fix opening hours issues",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187160461",
+      "user": "confusedbuffalo-bot",
+      "created_at": "2026-08-09T04:03:38Z",
+      "changes": 5,
+      "comment": "Ontario (Canada): Automatically fix phone number issues: missing country code, extra punctuation",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187158029",
+      "user": "ZeLonewolf",
+      "created_at": "2026-08-09T00:47:21Z",
+      "changes": 86,
+      "comment": "Remove MSA and \u03bcSA boundary relations",
+      "source": "Community consensus to remove these objects from OSM as documented at https://community.openstreetmap.org/t/metropolitan-micropolitan-statistical-areas/146177",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187157548",
+      "user": "bizunachou",
+      "created_at": "2026-08-09T00:13:03Z",
+      "changes": 594,
+      "comment": "Complete The Valley holes 1\u20139 features and tags; correct Pines hole metadata at Victoria Park Valley Golf Club",
+      "source": "Victoria Park Valley official scorecard and hole-layout sheets;Bing Maps Aerial",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187156397",
+      "user": "bizunachou",
+      "created_at": "2026-08-08T23:06:40Z",
+      "changes": 694,
+      "comment": "Complete and tag The Lakes holes 1\u20139 features; map The Valley holes 2\u20139 at Victoria Park Valley Golf Club",
+      "source": "Victoria Park Valley official scorecard and hole-layout sheets;Bing Maps Aerial;Esri World Imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187150854",
+      "user": "bizunachou",
+      "created_at": "2026-08-08T19:53:06Z",
+      "changes": 36,
+      "comment": "The Lakes 1-9",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187136705",
+      "user": "bizunachou",
+      "created_at": "2026-08-08T14:15:13Z",
+      "changes": 468,
+      "comment": "Map The Pines holes 1\u20139, tees, greens, and bunkers at Victoria Park Valley Golf Club",
+      "source": "Bing aerial imagery;Victoria Park Valley official scorecard and hole layouts;Esri World Imagery (Clarity) Beta",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187102056",
+      "user": "crosstato",
+      "created_at": "2026-08-07T18:35:52Z",
+      "changes": 1,
+      "comment": "Updated stores in silver creek plaza",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187102026",
+      "user": "crosstato",
+      "created_at": "2026-08-07T18:34:49Z",
+      "changes": 4,
+      "comment": "Updated restaurants in silver creek plaza",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187099929",
+      "user": "bibi6",
+      "created_at": "2026-08-07T17:43:36Z",
+      "changes": 14,
+      "comment": "Remove/replace isolated deprecated tags (bridge=arch, hazard=bicycle)",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187098634",
+      "user": "bibi6",
+      "created_at": "2026-08-07T17:11:31Z",
+      "changes": 9,
+      "comment": "Remove/replace isolated deprecated tags (shop=lingerie, man_made=hot_water_tank)",
+      "source": "deprecated features",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187097338",
+      "user": "bibi6",
+      "created_at": "2026-08-07T16:48:06Z",
+      "changes": 35,
+      "comment": "Remove/replace isolated deprecated tags (shop=gallery) and add buildings",
+      "source": "deprecated features;Bing",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187097151",
+      "user": "NateDaGreat",
+      "created_at": "2026-08-07T16:43:40Z",
+      "changes": 4,
+      "comment": "adjust permissions",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187080466",
+      "user": "CanuckGeographer",
+      "created_at": "2026-08-07T11:23:29Z",
+      "changes": 7,
+      "comment": "Corrected features and attributes of railways in Guelph, Ontario, Canada.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187069134",
+      "user": "bhartinegi_lyft",
+      "created_at": "2026-08-07T07:10:31Z",
+      "changes": 6,
+      "comment": "Added missing roads according to Lyft-owned aerial imagery.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187063652",
+      "user": "DENelson83",
+      "created_at": "2026-08-07T03:15:13Z",
+      "changes": 70,
+      "comment": "Standardize tagging for FAA area control centers",
+      "source": "Wikipedia; FAA; City of Memphis",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187059951",
+      "user": "CanuckGeographer",
+      "created_at": "2026-08-06T23:18:51Z",
+      "changes": 147,
+      "comment": "Corrected features and attributes of railways between Fergus and Guelph, Ontario, Canada.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187057568",
+      "user": "Coehill",
+      "created_at": "2026-08-06T21:30:25Z",
+      "changes": 1,
+      "comment": "Specify surfaces",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187039721",
+      "user": "bibi6",
+      "created_at": "2026-08-06T15:04:44Z",
+      "changes": 26,
+      "comment": "Remove/repalce isolated deprecated tags (landuse=pond; natural=marsh)",
+      "source": "deprecated features",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187012136",
+      "user": "crosstato",
+      "created_at": "2026-08-06T05:56:31Z",
+      "changes": 192,
+      "comment": "added paths to sideroad 10 north quarry area",
+      "source": "aerial imagery;survey;gps",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187011581",
+      "user": "crosstato",
+      "created_at": "2026-08-06T05:37:39Z",
+      "changes": 31,
+      "comment": "added and adjusted water near sideroad 10 n path quarry area",
+      "source": "aerial imagery;survey;gps",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187011478",
+      "user": "crosstato",
+      "created_at": "2026-08-06T05:34:04Z",
+      "changes": 40,
+      "comment": "added farmland",
+      "source": "aerial imagery;survey;gps",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187011430",
+      "user": "crosstato",
+      "created_at": "2026-08-06T05:32:12Z",
+      "changes": 205,
+      "comment": "adjusted quarry and water around sideroad 10 n trail",
+      "source": "aerial imagery;survey;gps",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "187010875",
+      "user": "crosstato",
+      "created_at": "2026-08-06T05:11:55Z",
+      "changes": 22,
+      "comment": "added fence to sideroad 10 n path",
+      "source": "aerial imagery;survey;gps",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186985576",
+      "user": "NateDaGreat",
+      "created_at": "2026-08-05T15:20:00Z",
+      "changes": 1,
+      "comment": "paved road",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186955915",
+      "user": "Metroscapes",
+      "created_at": "2026-08-05T04:08:49Z",
+      "changes": 1,
+      "comment": "Business Listing",
+      "source": "local knowledge",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186949557",
+      "user": "Coehill",
+      "created_at": "2026-08-04T21:59:57Z",
+      "changes": 3,
+      "comment": "Specify surfaces",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186936165",
+      "user": "Tuwewanzi",
+      "created_at": "2026-08-04T16:52:05Z",
+      "changes": 25,
+      "comment": "Dakota and Lakota Canadian Province and Territory Names from D\u00fazaha\u019e M\u00e1niwi\u019e writings (2007)",
+      "source": "\"Dakota Iapi Ehdakub\" Doris Pratt (D\u00fazaha\u019e M\u00e1ni Wi\u019e) 2007",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186934677",
+      "user": "VLD082",
+      "created_at": "2026-08-04T16:25:54Z",
+      "changes": 98,
+      "comment": "Added sidewalks and crossings. #dataupdate",
+      "source": "aerial imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186915296",
+      "user": "rsitoni_Lyft",
+      "created_at": "2026-08-04T10:14:48Z",
+      "changes": 5,
+      "comment": "Modified lanes tag and added turn:lanes tag on the exit according to the Lyft-owned street-level imagery.",
+      "source": "",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186897920",
+      "user": "CAM-Gerlach_Repair",
+      "created_at": "2026-08-04T01:08:18Z",
+      "changes": 29,
+      "comment": "Mass-remove SEO spam added by @misty870808 for service call POIs with malformed tags that are very unlikely to verifiably exist at the indicated locations, and are likely to be part of a lead generation scam",
+      "source": "Bing; Esri World Imagery",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186886108",
+      "user": "Coehill",
+      "created_at": "2026-08-03T18:45:49Z",
+      "changes": 2,
+      "comment": "Specify whether ways are lit",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    },
+    {
+      "id": "186886103",
+      "user": "Coehill",
+      "created_at": "2026-08-03T18:45:44Z",
+      "changes": 1,
+      "comment": "Specify road smoothness",
+      "source": "survey",
+      "import": "",
+      "import_page": ""
+    }
+  ]
+}
