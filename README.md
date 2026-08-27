@@ -37,22 +37,34 @@ Remaining drafts, unpublished, in this order:
    work. That withdrawal is the time-sensitive part: it is currently the last
    word in the thread.
 
-The unit-tagging convention is a **separate** track with its own consensus
-requirement, written up outside this repo at
-`~/Code/obsidian/skfd/OSM Research/Guelph Unit Addresses (tagging convention).md`.
-Guelph's units are mostly in OSM already, double-encoded (`addr:housenumber=714-30`
-plus `addr:unit=30`) on 5,422 objects; the original importer defends that form.
-Do not let it entangle the import proposal — the import is create-only and
-touches none of those nodes.
+Two **mechanical edits** ride along with the proposal, announced with it but
+consented separately under the Automated Edits code of conduct:
 
-**Blocker before the pilot upload** (not before publishing — the wiki page states
-intent): the engine writes only `addr:housenumber`, `addr:street`, `source` and
-the enriched `addr:postcode` (`t2/conflate.py`), and no `source:license` on the
-changeset (`t2/osm_export.py`). The wiki tagging table also promises
-`addr:city=Guelph` and `addr:province=Ontario`, kept to stay consistent with the
-2025 import. Constant node tags and a changeset `source:license` are an engine
-change that must land before the first Guelph changeset, or the pilot will
-contradict its own published tagging plan.
+- **Remove `addr:province=Ontario`** (~3,699 objects). Canadian convention omits
+  province; Toronto's import doesn't write it. Not written on new nodes either.
+- **Split double-encoded unit housenumbers** (5,422 objects):
+  `addr:housenumber=714-30` + `addr:unit=30` → `addr:housenumber=714`, unit
+  untouched. The original importer defended the combined form, so the wiki page
+  records the argument and the 2026-08-21 Nominatim evidence rather than just
+  the conclusion. Rationale in full at
+  `~/Code/obsidian/skfd/OSM Research/Guelph Unit Addresses (tagging convention).md`.
+
+Neither is on the import path, and the import does not wait on them.
+
+**Blockers before the pilot upload** (not before publishing — the wiki page
+states intent):
+
+- The engine writes only `addr:housenumber`, `addr:street`, `source` and the
+  enriched `addr:postcode` (`t2/conflate.py`), and no `source:license` on the
+  changeset (`t2/osm_export.py`). The wiki tagging table promises
+  `addr:city=Guelph` too. Constant node tags plus a changeset `source:license`
+  are an engine change that must land first, or the pilot contradicts its own
+  published tagging plan. (Dropping `addr:province` removed one of the two
+  constants this used to need.)
+- The engine has **no tag-modification path at all** — it creates nodes. Both
+  mechanical edits need one, with per-object version checking and prior-value
+  capture. Or run them from JOSM, neighbourhood by neighbourhood, as the 2025
+  import did.
 
 The pipeline lives in the engine repo,
 [`address-importer-friend`](https://github.com/skfd/address-importer-friend)

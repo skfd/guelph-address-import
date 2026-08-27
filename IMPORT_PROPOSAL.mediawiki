@@ -1,5 +1,5 @@
 {{Map of imports| name = Guelph Address Points
-| description = Continuous, human-reviewed gap-fill and QA of civic address points from the City of Guelph open dataset, over the completed 2025 community import.
+| description = Continuous, human-reviewed gap-fill of civic address points from the City of Guelph open dataset, plus two documented mechanical tag cleanups, over the completed 2025 community import.
 | user = [[https://www.openstreetmap.org/user/skfd%20imports|skfd imports]]
 | status = Proposed
 }}
@@ -26,6 +26,8 @@ ARandomThumbtack was contacted before this page was written and is content for t
 
 '''Continuous''', human-reviewed gap-fill of the civic addresses the City publishes and OSM does not yet have, re-run each time the City's dataset changes — plus the QA findings that fall out of running conflation over a city that is already mapped.
 
+Alongside it, and consented separately, '''two one-off mechanical tag cleanups''' on Guelph's existing address objects: removing <code>addr:province=Ontario</code>, and splitting the unit back out of double-encoded housenumbers. Both are described in [[#Mechanical edits|§ Mechanical edits]]. They are not part of the import path and nothing in the import depends on them landing.
+
 That is the difference from Toronto, and it is the whole point of this page:
 
 * Toronto was a '''one-time''' import of half a million missing addresses into a city that had almost none.
@@ -42,7 +44,7 @@ Measured against source snapshot 39 (2026-08-13): 53,846 active source rows, col
 |-
 | New addresses per City update || small, unknown || The recurring workload this proposal is actually about. Tracked snapshot-to-snapshot by <code>ontario-address-changes</code>.
 |-
-| Unit-level addresses || 13,162 source unit rows || '''Out of scope.''' Source rows are collapsed to one candidate per civic address (<code>[units] policy = "collapse-to-civic"</code>). Guelph's units are largely ''already in OSM'' — 5,422 objects carry the unit twice, as <code>addr:housenumber=714-30</code> ''and'' <code>addr:unit=30</code>. Normalising that is a separate mechanical edit under the [[Automated Edits code of conduct]], not consensual yet, and not part of this proposal. Nothing here re-tags an existing node.
+| Unit-level addresses || 13,162 source unit rows || '''Not uploaded.''' Source rows are collapsed to one candidate per civic address (<code>[units] policy = "collapse-to-civic"</code>). Guelph's units are largely ''already in OSM'', double-encoded — see § Mechanical edits.
 |-
 | Street-name disagreements || to be reported || Output of the <code>nearby_street_mismatch</code> check. Reported, never auto-corrected.
 |-
@@ -57,11 +59,11 @@ Measured against source snapshot 39 (2026-08-13): 53,846 active source rows, col
 
 === Non-goals ===
 
-Identical to [[Toronto/Import/AddressPoints#Goals and non-goals|§ Non-goals of the Toronto import]], and they carry extra weight here because this city is somebody else's finished work:
+As [[Toronto/Import/AddressPoints#Goals and non-goals|§ Non-goals of the Toronto import]], with one deliberate exception:
 
-* '''No deletions''', including addresses the City source no longer lists.
-* '''No mutation of existing OSM objects''' — this creates new nodes only. In particular, no re-tagging of the 2025 import's nodes.
-* '''No unit-level import''', no <code>addr:interpolation</code> cleanup, no polygons, no geometry editing.
+* '''No deletions of objects''', including addresses the City source no longer lists.
+* '''No mutation of existing OSM objects by the import.''' The import path creates new nodes only. The two campaigns in § Mechanical edits are the sole exception, they are announced and consented separately from the import, and they touch only the two tags named there — nothing else on the object, and no geometry.
+* '''No unit-level addresses uploaded''', no <code>addr:interpolation</code> cleanup, no polygons, no geometry editing.
 
 == Import data ==
 
@@ -84,14 +86,37 @@ Only the '''deltas''' from [[Toronto/Import/AddressPoints#Tagging plan|§ Taggin
 |-
 | <code>addr:city</code> || <code>Guelph</code> || '''Delta from Toronto''', which omits <code>addr:city</code>. Emitted here to stay consistent with the 2025 import, which wrote it on every node.
 |-
-| <code>addr:province</code> || <code>Ontario</code> || '''Delta from Toronto''', which omits province per Canadian convention. Written by the 2025 import and dominant in Guelph's OSM data today (3,699 <code>Ontario</code> against 178 <code>ON</code> in the sampled elements). See § Open questions.
+| <code>addr:province</code> || ''not written'' || Omitted per Canadian convention, as in Toronto. The 2025 import wrote it as a constant; the existing tags are being removed — see § Mechanical edits.
 |-
 | <code>addr:postcode</code> || enrichment only || Written only when a same-address POI already in OSM carries one. Never invented, never extrapolated.
 |-
 | <code>source</code> || <code>City of Guelph Open Data</code> || On the node and on the changeset.
 |}
 
-Deliberately '''not''' emitted: <code>addr:unit</code> (see scope), <code>addr:ward</code> (the source's 1–6 ward integer is modelled better as an admin polygon), <code>addr:housename</code>, <code>addr:country</code>, and any city-specific custom namespace.
+Deliberately '''not''' emitted: <code>addr:unit</code> (see scope), <code>addr:province</code> (above), <code>addr:ward</code> (the source's 1–6 ward integer is modelled better as an admin polygon), <code>addr:housename</code>, <code>addr:country</code>, <code>addr:full</code> (tested 2026-08-21: Nominatim discards it, so it is a pure duplicate of the structured tags), and any city-specific custom namespace.
+
+== Mechanical edits ==
+
+Two tag cleanups on '''existing''' Guelph objects, announced with this proposal but consented separately under the [[Automated Edits code of conduct]]. Both are attribute-only: one tag per object, nothing else touched, no geometry, no deletions. Both run neighbourhood by neighbourhood in separately revertable batches, in the same 23-area partition as the import, from the same account.
+
+=== 1. Remove <code>addr:province=Ontario</code> ===
+
+The 2025 import wrote <code>addr:province</code> as a constant; it is now on roughly '''3,699''' Guelph objects (against 178 tagged <code>ON</code>). Canadian convention omits province, as does the Toronto import, and the value is fully implied by the enclosing admin boundary. Removed, with no replacement. The <code>ON</code> variants are removed on the same pass rather than harmonised.
+
+=== 2. Split double-encoded unit housenumbers ===
+
+'''5,422''' objects carry the unit '''twice''': <code>addr:housenumber=714-30</code> ''and'' <code>addr:unit=30</code> — and in an order that is not the Canada Post one (which writes <code>30-714</code>), so it is not a postal string either. The fix writes the civic number alone into <code>addr:housenumber</code> and leaves the already-correct <code>addr:unit</code> untouched:
+
+ addr:housenumber = 714-30   →   addr:housenumber = 714
+ addr:unit        = 30           addr:unit        = 30   (unchanged)
+
+Letter suffixes that ''are'' the civic number (<code>645A</code>) are not units and are preserved, per the Toronto import's precedent. A further ~17 objects carry the combined form with no <code>addr:unit</code> to confirm the split; those are handled by hand, not mechanically.
+
+'''The argument, recorded because it was contested.''' The original importer's position is that the combined form keeps the postal address searchable. Tested against live Nominatim on 2026-08-21, it does not: "72 York Road Unit 5" returns the property with the unit silently ignored, and "5-72 York Road" returns unrelated road segments. Unit-level search is unavailable under ''every'' scheme currently available, so it cannot argue for either form — while the combined form additionally breaks plain "714 Willow Road" queries, because then no object carries the bare civic number. The honest summary is that this change costs nothing and buys correct semantics.
+
+=== Changeset tags for both campaigns ===
+
+As the import's changeset tags below, except <code>import=yes</code> is replaced by <code>mechanical=yes</code>, the comment names the campaign, and <code>import_plan</code> points at this section.
 
 === Changeset tags ===
 
@@ -137,13 +162,15 @@ Per cycle, triggered by a change in the source data rather than by a calendar:
 
 == Revert plan ==
 
-As [[Toronto/Import/AddressPoints#Revert plan|§ Revert plan of the Toronto import]]. Every upload is a distinct changeset from a dedicated account, with a per-run manifest of <code>(source_id, address, osm_node_id, changeset_id)</code>, so any batch can be reverted in isolation without touching neighbouring work. Because this import creates nodes only and never modifies existing objects, a revert cannot damage the 2025 import or any organic mapping.
+As [[Toronto/Import/AddressPoints#Revert plan|§ Revert plan of the Toronto import]]. Every upload is a distinct changeset from a dedicated account, with a per-run manifest of <code>(source_id, address, osm_node_id, changeset_id)</code>, so any batch can be reverted in isolation without touching neighbouring work.
+
+The import path creates nodes only, so reverting it cannot damage the 2025 import or any organic mapping. The two campaigns in § Mechanical edits ''do'' modify existing objects, so they carry the stricter rule: each batch records the prior value and the object version it edited, each is a single-purpose changeset touching exactly one tag, and each is revertable on its own without disturbing the import batches interleaved around it. Any object whose version has moved since the batch was prepared is skipped and re-examined rather than overwritten.
 
 == Open questions for the community ==
 
-# '''<code>addr:province=Ontario</code>.''' The 2025 import wrote it as a constant; the Toronto import omits province per Canadian convention; Guelph's OSM data is now overwhelmingly tagged with it. Local consistency and provincial convention point in opposite directions. The current plan is to follow local consistency and keep writing it — objections welcome, and this is the single tagging decision most worth arguing about.
+# '''The two mechanical edits.''' § Mechanical edits states the intent; the consent is what the feedback window is for. Objections to either campaign — or to the batch size and ordering — belong on [https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103 thread #135103].
 # '''The 75 <code>Guelph/Eramosa Twp</code> rows.''' The City publishes them past its own boundary, and Wellington County publishes the same addresses. Held back until someone says which source should own them.
-# '''Unit normalisation.''' Separate from this proposal, and unresolved: 5,422 objects double-encode the unit (<code>addr:housenumber=714-30</code> plus <code>addr:unit=30</code>, in an order that is not even the Canada Post one). The maintainer and the original importer disagree; testing against Nominatim on 2026-08-21 showed unit-level search does not work under ''any'' tagging scheme, which removes searchability as an argument either way. Being argued on [https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103 thread #135103].
+# '''<code>;</code>-lists and <code>addr:flats</code>.''' Roughly 800 objects carry <code>;</code>-separated housenumbers, and one carries unit ranges in <code>addr:unit</code> where <code>addr:flats</code> belongs. Both want door positions rather than a mechanical rule, so the plan is a MapRoulette challenge rather than a batch — is that wanted?
 # '''Cadence and quiet.''' How often should a maintenance batch be announced on the forum thread: every batch, or a periodic summary?
 
 == References ==

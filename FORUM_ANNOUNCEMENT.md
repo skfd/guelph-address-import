@@ -1,56 +1,32 @@
-# Forum comment — draft
+# Forum announcement — draft
 
 **Reply in the existing thread. Do not open a new topic.**
-
 <https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103>
-— ARandomThumbtack's original import thread, 13 posts, already tagged `import`
-and `import-proposal`. Your posts are #11 (2026-08-20) and #13 (2026-08-21,
-currently the last post in the thread).
+(13 posts, tagged `import` / `import-proposal`; our posts are #11 and #13.)
 
-This reply does two jobs: it **withdraws the `addr:full` suggestion** you left
-in post #13, which you have since tested and disproved, and it makes the
-continuous import **publicly announced** — ARandomThumbtack's go-ahead came by
-ping, and the Import Guidelines want the announcement and the wiki link in the
-open where other Ontario mappers can object.
-
-Post it *after* `Guelph/Import/AddressPoints` is live, so the link resolves.
-Check the two `<...>` placeholders, and check the third paragraph actually
-matches what ARandomThumbtack agreed to — I only know that they were OK with it,
-not in what words.
+Post once `Guelph/Import/AddressPoints` is live so the link resolves. Check the
+first line matches what ARandomThumbtack actually agreed to.
 
 ---
 
-Following up on my own post above, with a correction and a proposal.
+**Taking over ongoing maintenance of Guelph's addresses — announcement**
 
-**First, the correction: withdraw the `addr:full` idea.** I suggested it as a compatibility shim so the postal string stays searchable. I tested it against live Nominatim on 2026-08-21 and it does nothing — Nominatim indexes the object but discards `addr:full` *and* `addr:unit` outright. Searching the exact `addr:full` value of an indexed node returns no relevant result; `/details` shows neither tag in extratags. So the shim buys no searchability while restating housenumber + street + unit + city in a second place that can drift. Don't add it. My apologies for floating it untested.
+@ARandomThumbtack has given me the go-ahead to pick up ongoing upkeep of Guelph's addresses. Thanks to them for the 2025 import — it put Guelph among the two best-covered municipalities in Ontario — and for the handover.
 
-What the test does show, and it's the honest cost of the whole discussion: **unit-level search does not work under any tagging scheme available today.** "72 York Road Unit 5" returns the property with the unit silently ignored; "5-72 York Road" returns unrelated road segments. So the combined-housenumber form isn't buying searchability either — and it *loses* plain "714 Willow Rd" queries, because then no object carries the bare civic number. That's the trade-off in one line: correct tagging degrades unit search to property search, and the current form degrades property search too.
+Three things, all documented at **<https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints>**:
 
-@ARandomThumbtack — one incidental find while testing: Guelph had 29 objects tagged with `addr:unit` and nothing else, no housenumber or street, which makes them invisible to every geocoder. 24 were mine from an earlier fumble, 5 were other mappers'. All fixed, changesets 187773424, 187776928 and 187822533. Guelph now has none.
+**1. Continuous gap-fill.** 2,523 of 40,634 City addresses aren't in OSM (measured 2026-08-10) — the tail parked in `RemainingAddresses.osm`, plus everything published since, like the 51 addresses the City added on 2026-08-06. I track the City dataset with a differ; when it changes I re-conflate, hand-review the new candidates and upload one changeset per area. Create-only, every candidate approved by a human, `import=yes` / `bot=no`. Same tooling and same dedicated account as the [Toronto import](https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints) in May.
 
-**Second, the proposal — continuous maintenance of Guelph's addresses.**
+**2. Removing `addr:province=Ontario`** from the ~3,699 Guelph objects that carry it. Canadian convention omits province; the Toronto import doesn't write it.
 
-I've spoken to @ARandomThumbtack and they're happy for me to pick this up; I'd rather say so here in the open than leave it in a DM, and they should feel free to correct me if I've overstated it.
+**3. Normalising unit tagging.** 5,422 objects encode the unit twice — `addr:housenumber=714-30` *and* `addr:unit=30` — in an order that isn't even the Canada Post one. Splitting to `addr:housenumber=714` + `addr:unit=30`.
 
-The case for it is in their own post above: the City published an update adding 51 addresses on 2026-08-06, and nobody is currently signed up to carry those into OSM. Right now **2,523 of 40,634** civic addresses in the City dataset aren't in OSM (measured 2026-08-10 via Overpass) — diffuse, no unmapped district, mostly the tail explicitly parked in `RemainingAddresses.osm` plus ten months of new construction.
+@ARandomThumbtack and I have gone back and forth on (3). For the record: I tested against live Nominatim on 2026-08-21, and unit-level search fails under *every* tagging scheme — "72 York Road Unit 5" returns the property with the unit ignored. So searchability doesn't argue for the combined form, while the combined form does break plain "714 Willow Road" queries, because then nothing carries the bare civic number.
 
-So rather than another bulk load: I track the City dataset with a differ, and when it changes I re-conflate, hand-review the handful of new candidates, and upload one changeset per area. Steady state should be small and boring.
+**Also withdrawing the `addr:full` suggestion in my post above** — same test, Nominatim discards `addr:full` outright. It buys nothing. Ignore that part.
 
-To be explicit, because "continuous" makes people reasonably nervous:
+(2) and (3) are mechanical edits under the [Automated Edits code of conduct](https://wiki.openstreetmap.org/wiki/Automated_Edits_code_of_conduct): documented on the wiki page, run neighbourhood by neighbourhood in separately revertable batches, no other tags touched.
 
-- Nothing uploads on a timer. Every candidate is approved by a human in a review UI before a changeset opens.
-- The recurring automated part is the **conflation**, which is read-only.
-- **Create-only. No deletions, no edits to existing objects** — including no re-tagging of the 2025 import's nodes. The unit normalisation below is a separate question with its own consensus.
-- Changesets stay `import=yes` / `bot=no`: a sequence of small reviewed imports, not an automated edit.
+**Objections welcome for 14 days, to 2026-09-10.** Then a pilot tile posted here with its counts and changeset before anything else moves.
 
-Same tooling as the [Toronto address import](https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints) in May (1,297 reviewed changesets, ~449k addresses, same dedicated `skfd imports` account). The Toronto page has the full detail on conflation, checks, audit log and revert plan; the Guelph page is deliberately short and covers only what differs:
-
-**<https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints>**
-
-Feedback window **14 days**, to <date + 14 days>. Then one pilot area tile, posted here with its counts and its changeset, then a week's hold before the rest.
-
-**One tagging question I'd like settled before any of that.** Guelph writes `addr:province=Ontario` on essentially every address (3,699 against 178 `ON` in my sample) because the 2025 import wrote it as a constant. Toronto's import omits province per the usual Canadian convention. Local consistency and provincial convention disagree, and I'd rather be consistent with Guelph than with a convention — but say so if that's wrong.
-
-**And to be clear about what I'm *not* proposing here:** the 5,422 objects carrying both `addr:housenumber=714-30` and `addr:unit=30` stay exactly as they are. @ARandomThumbtack and I don't agree on that one yet, it's a mechanical edit that needs its own consensus under the Automated Edits code of conduct, and it has nothing to do with adding missing addresses. Happy to keep arguing it separately.
-
-Contact: toronto@comentality.com · tooling: [address-importer-friend](https://github.com/skfd/address-importer-friend), [guelph-address-import](https://github.com/skfd/guelph-address-import)
+toronto@comentality.com · [address-importer-friend](https://github.com/skfd/address-importer-friend) · [guelph-address-import](https://github.com/skfd/guelph-address-import)
