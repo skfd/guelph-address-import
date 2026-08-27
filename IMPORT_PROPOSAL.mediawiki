@@ -35,7 +35,7 @@ Alongside it, and consented separately, '''two one-off mechanical tag cleanups''
 
 Guelph's import is '''finished'''. There is no initial upload left to argue about — the questions an initial proposal exists to settle (is the dataset suitable, is the licence compatible, does the community want it) were asked and answered on [[Guelph/Address_Import]] in September 2025. What was never settled is who keeps it current afterwards, and that is the only thing this page proposes.
 
-The contrast with [[Toronto/Import/AddressPoints]] is the same distinction: Toronto was a one-time import of half a million addresses into a city that had almost none, and its page is long because everything was open. Here almost nothing is.
+The contrast with [[Toronto/Import/AddressPoints]] is one of ''proportion'', not of kind. Toronto is maintained continuously too — but there the continuous part is a trickle behind a half-million-address bulk rollout, and its page is long because, in 2026-05, everything was still open. In Guelph the trickle is the entire job, and almost nothing is open.
 
 === Scope ===
 
