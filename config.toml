@@ -121,8 +121,8 @@ attribution = "City of Guelph Open Data"
 # On publication set this to:
 #   https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints
 # NOT the prior import's page (Guelph/Address_Import) — that belongs to its
-# author, is linked from ours, and is never edited or reused. Publication is
-# gated on ARandomThumbtack_Import replying to CONTACT_PRIOR_IMPORTER.md.
+# author, is linked from ours, and is never edited or reused. Publication order
+# and the one-week wait after CONTACT_PRIOR_IMPORTER.md are in the README.
 import_plan = ""
 
 # The prior import's tag mapping (05-prior-import-detection.md, "What to

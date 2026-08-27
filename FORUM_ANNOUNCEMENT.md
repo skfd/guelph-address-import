@@ -2,9 +2,9 @@
 
 Venue: <https://community.openstreetmap.org> → **Communities / Canada**.
 New topic, tags: `import`, `canada`, `ontario`, `addresses`.
-Post *after* the wiki page `Guelph/Import/AddressPoints` is live, and *after*
-the message in `CONTACT_PRIOR_IMPORTER.md` has gone to ARandomThumbtack_Import.
-Fill in the two `<...>` placeholders before posting.
+Post *after* the wiki page `Guelph/Import/AddressPoints` is live — which is
+itself gated on the `CONTACT_PRIOR_IMPORTER.md` message per the README's
+publish order. Fill in the `<date + 14 days>` placeholder before posting.
 
 **Title:** `Guelph addresses — continuous gap-fill over the 2025 import (proposal)`
 
@@ -37,7 +37,7 @@ To be explicit, because "continuous" makes people reasonably nervous:
 
 Same tooling that ran the [Toronto address import](https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints) in May 2026 — [that thread](https://community.openstreetmap.org/t/address-import-for-toronto/119368), 1,297 changesets, ~449k addresses, same dedicated `skfd imports` account. The Toronto wiki page carries the full detail on conflation, checks, audit log and revert plan; I haven't repeated any of it.
 
-The Guelph page is deliberately short and only covers what's different: **<wiki page URL — https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints>**
+The Guelph page is deliberately short and only covers what's different: **<https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints>**
 
 ## The one question worth arguing about
 

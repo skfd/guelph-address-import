@@ -106,7 +106,7 @@ Deliberately '''not''' emitted: <code>addr:unit</code> (see scope), <code>addr:w
 |-
 | <code>bot</code> || <code>no</code>
 |-
-| <code>created_by</code> || <code>address-importer-friend</code>
+| <code>created_by</code> || <code>t2-address-import</code>
 |-
 | <code>import_plan</code> || <code>https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints</code>
 |}

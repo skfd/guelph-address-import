@@ -14,13 +14,25 @@ Announcement drafts live in this repo and are **unpublished**. Send them in this
 order:
 
 1. `CONTACT_PRIOR_IMPORTER.md` — OSM message to `ARandomThumbtack_Import`
-   first, thanking them and offering the tooling. Wait for a reply.
+   first, thanking them and offering the tooling. Then **wait one week**. A
+   reply changes the plan (they may want to run it themselves); silence does
+   not block — the etiquette rule is contact first, not consent first, and
+   dormant import accounts often never answer.
 2. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Import/AddressPoints`
    (deliberately short; defers to `Toronto/Import/AddressPoints` for the shared
    machinery). Their `Guelph/Address_Import` page is theirs — link, never edit.
 3. `WIKI_CATALOGUE_ENTRY.mediawiki` — the [[Import/Catalogue]] row, same sitting.
 4. `FORUM_ANNOUNCEMENT.md` — Community Forum topic, tagged `import`, opening the
    14-day feedback window.
+
+**Blocker before the pilot upload** (not before publishing — the wiki page states
+intent): the engine writes only `addr:housenumber`, `addr:street`, `source` and
+the enriched `addr:postcode` (`t2/conflate.py`), and no `source:license` on the
+changeset (`t2/osm_export.py`). The wiki tagging table also promises
+`addr:city=Guelph` and `addr:province=Ontario`, kept to stay consistent with the
+2025 import. Constant node tags and a changeset `source:license` are an engine
+change that must land before the first Guelph changeset, or the pilot will
+contradict its own published tagging plan.
 
 The pipeline lives in the engine repo,
 [`address-importer-friend`](https://github.com/skfd/address-importer-friend)
