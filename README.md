@@ -10,20 +10,40 @@ survey). What is proposed here is **continuous gap-fill and QA over that
 finished import**, not a re-import: create-only, human-reviewed per batch,
 re-run when the City publishes.
 
-Announcement drafts live in this repo and are **unpublished**. Send them in this
-order:
+**Prior importer contacted — go-ahead given.** `ARandomThumbtack` was asked
+directly and is content for this project to take on continuous upkeep. (The
+draft message that was written for this, `CONTACT_PRIOR_IMPORTER.md`, was
+superseded by that conversation and removed; it is in git history at `0c268bb`.)
 
-1. `CONTACT_PRIOR_IMPORTER.md` — OSM message to `ARandomThumbtack_Import`
-   first, thanking them and offering the tooling. Then **wait one week**. A
-   reply changes the plan (they may want to run it themselves); silence does
-   not block — the etiquette rule is contact first, not consent first, and
-   dormant import accounts often never answer.
-2. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Import/AddressPoints`
+Guelph is **not a cold start**, and neither is the forum. Two things the
+scaffold docs predate:
+
+- The import's own forum thread is
+  [#135103](https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103),
+  tagged `import` / `import-proposal`, and we are already in it — posts #11 and
+  #13 (2026-08-20/21). Announcements go **there**, not in a new topic.
+- We have already edited Guelph addresses: changesets 187773424, 187776928,
+  187822533 fixed all 29 `addr:unit`-only objects (2026-08-21/22).
+
+Remaining drafts, unpublished, in this order:
+
+1. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Import/AddressPoints`
    (deliberately short; defers to `Toronto/Import/AddressPoints` for the shared
    machinery). Their `Guelph/Address_Import` page is theirs — link, never edit.
-3. `WIKI_CATALOGUE_ENTRY.mediawiki` — the [[Import/Catalogue]] row, same sitting.
-4. `FORUM_ANNOUNCEMENT.md` — Community Forum topic, tagged `import`, opening the
-   14-day feedback window.
+2. `WIKI_CATALOGUE_ENTRY.mediawiki` — the `Import/Catalogue` row, same sitting.
+3. `FORUM_ANNOUNCEMENT.md` — a **reply on thread #135103**, posted once the wiki
+   page is live so its link resolves. It also withdraws the `addr:full`
+   suggestion left in post #13, which was tested against Nominatim and does not
+   work. That withdrawal is the time-sensitive part: it is currently the last
+   word in the thread.
+
+The unit-tagging convention is a **separate** track with its own consensus
+requirement, written up outside this repo at
+`~/Code/obsidian/skfd/OSM Research/Guelph Unit Addresses (tagging convention).md`.
+Guelph's units are mostly in OSM already, double-encoded (`addr:housenumber=714-30`
+plus `addr:unit=30`) on 5,422 objects; the original importer defends that form.
+Do not let it entangle the import proposal — the import is create-only and
+touches none of those nodes.
 
 **Blocker before the pilot upload** (not before publishing — the wiki page states
 intent): the engine writes only `addr:housenumber`, `addr:street`, `source` and
