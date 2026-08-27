@@ -4,6 +4,8 @@
 | status = Proposed
 }}
 
+''A subpage of [[Guelph/Address_Import]] because this is a continuation of that import, '''not''' because it is maintained by its author. The parent page is ARandomThumbtack's and stays theirs; this subpage is written and maintained by [[User:skfd|skfd]], who is solely responsible for everything proposed on it. Neither page speaks for the other.''
+
 == Status ==
 
 * '''Stage:''' Proposed. The community feedback window opens with the publication of this page and the accompanying Community Forum announcement.
@@ -137,7 +139,7 @@ As the import's changeset tags below, except <code>import=yes</code> is replaced
 |-
 | <code>created_by</code> || <code>t2-address-import</code>
 |-
-| <code>import_plan</code> || <code>https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints</code>
+| <code>import_plan</code> || <code>https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous</code>
 |}
 
 '''On "continuous" and <code>bot=no</code>:''' every batch is a separate, operator-triggered run whose candidates are reviewed one at a time in the local web UI before any changeset is opened. Nothing uploads on a timer and nothing uploads unreviewed. The recurring part is the ''conflation'', which is read-only; the ''upload'' is a human decision every time. These are therefore imports under the [[Import/Guidelines|Import Guidelines]] — <code>import=yes</code>, <code>bot=no</code> — and not automated edits under the [[Automated Edits code of conduct|Automated Edits code of conduct]]. If that ever stops being true, this page changes before the behaviour does.

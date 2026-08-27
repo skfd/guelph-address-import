@@ -119,7 +119,7 @@ attribution = "City of Guelph Open Data"
 # IMPORT_PROPOSAL.mediawiki, not posted). The engine must not stamp
 # import_plan on a changeset pointing at a page that does not exist yet.
 # On publication set this to:
-#   https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints
+#   https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous
 # NOT the prior import's page (Guelph/Address_Import) — that belongs to its
 # author, is linked from ours, and is never edited or reused. Publication order
 # and the one-week wait after CONTACT_PRIOR_IMPORTER.md are in the README.

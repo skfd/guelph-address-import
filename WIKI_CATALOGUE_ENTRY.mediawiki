@@ -1,4 +1,4 @@
-Second wiki edit, made at the same time as publishing Guelph/Import/AddressPoints:
+Second wiki edit, made at the same time as publishing Guelph/Address_Import/Continuous:
 add one row to [[Import/Catalogue]], in the Canada → Ontario section, alphabetically
 before the existing Toronto row.
 
@@ -7,7 +7,7 @@ Status / Date / Contact — check the live table's column order before saving, i
 changed before.
 
 |-
-| [[Guelph/Import/AddressPoints|Guelph Address Points]]
+| [[Guelph/Address_Import/Continuous|Guelph Address Points]]
 | Guelph, Ontario, Canada
 | Addresses (nodes)
 | Proposed

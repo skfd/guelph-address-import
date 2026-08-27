@@ -4,7 +4,7 @@
 <https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103>
 (13 posts, tagged `import` / `import-proposal`; our posts are #11 and #13.)
 
-Post once `Guelph/Import/AddressPoints` is live so the link resolves. Check the
+Post once `Guelph/Address_Import/Continuous` is live so the link resolves. Check the
 first line matches what ARandomThumbtack actually agreed to.
 
 ---
@@ -13,7 +13,7 @@ first line matches what ARandomThumbtack actually agreed to.
 
 @ARandomThumbtack has given me the go-ahead to pick up ongoing upkeep of Guelph's addresses. Thanks to them for the 2025 import — it put Guelph among the two best-covered municipalities in Ontario — and for the handover.
 
-Three things, all documented at **<https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints>**:
+Three things, all documented at **<https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous>**:
 
 **1. Continuous gap-fill.** 2,523 of 40,634 City addresses aren't in OSM (measured 2026-08-10) — the tail parked in `RemainingAddresses.osm`, plus everything published since, like the 51 addresses the City added on 2026-08-06. I track the City dataset with a differ; when it changes I re-conflate, hand-review the new candidates and upload one changeset per area. Create-only, every candidate approved by a human, `import=yes` / `bot=no`. Same tooling and same dedicated account as the [Toronto import](https://wiki.openstreetmap.org/wiki/Toronto/Import/AddressPoints) in May.
 

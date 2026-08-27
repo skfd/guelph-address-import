@@ -27,7 +27,7 @@ scaffold docs predate:
 
 Remaining drafts, unpublished, in this order:
 
-1. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Import/AddressPoints`
+1. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Address_Import/Continuous`
    (deliberately short; defers to `Toronto/Import/AddressPoints` for the shared
    machinery). Their `Guelph/Address_Import` page is theirs — link, never edit.
 2. `WIKI_CATALOGUE_ENTRY.mediawiki` — the `Import/Catalogue` row, same sitting.
@@ -87,16 +87,20 @@ the `[units]` policy. Tiles subdivide the city's 23 "Guelph Areas" polygons
 Entry state re-confirmed 2026-08-15 by `scripts/entry_state_probe.py`
 (evidence: `onboarding/entry-state-2026-08-15.json`): the importer holds 85.6%
 of sampled elements, 2026 activity is 49 elements and the latest 100
-changesets carry no import tags — complete and quiet, not active. Tag
-conventions to stay consistent with: `addr:province=Ontario` (3,699 vs 178
-`ON`), postcode on the dominant combo, 725 sampled elements already carry
-`addr:unit`.
+changesets carry no import tags — complete and quiet, not active. The probe's
+tag-convention note said to stay consistent with `addr:province=Ontario`
+(3,699 vs 178 `ON`); that was **superseded 2026-08-27** — province is now
+dropped and the existing tags stripped, see the mechanical edits above.
+Postcode on the dominant combo still holds, as does the observation that 725
+sampled elements already carry `addr:unit`.
 
 Baseline conflation runs in full regardless of entry state (house rule —
 entering a brownfield city in maintenance-only mode inherits prior errors
 invisibly). Expect the review queue to be MATCH/MATCH_FAR-dominated, the
-opposite of Hamilton; the interesting outputs are street-name disagreements,
-the ~52% unit gap (source 13,162 unit rows vs OSM's 6,289 `addr:unit`), and
-OSM-only addresses.
+opposite of Hamilton; the interesting outputs are street-name disagreements and
+OSM-only addresses. (The scaffold called the unit situation a "~52% gap" —
+13,162 source unit rows against 6,289 `addr:unit`. That reading is wrong: most
+of those units *are* in OSM, double-encoded into the housenumber. See the
+mechanical edits above.)
 
 MIT licensed.
