@@ -1,0 +1,19 @@
+Second wiki edit, made at the same time as publishing Guelph/Import/AddressPoints:
+add one row to [[Import/Catalogue]], in the Canada → Ontario section, alphabetically
+before the existing Toronto row.
+
+The catalogue table's columns are (as of 2026-08-27) Name / Region / Data type /
+Status / Date / Contact — check the live table's column order before saving, it has
+changed before.
+
+|-
+| [[Guelph/Import/AddressPoints|Guelph Address Points]]
+| Guelph, Ontario, Canada
+| Addresses (nodes)
+| Proposed
+| 2026-08-27
+| [[User:skfd|skfd]] / [[User:skfd imports|skfd imports]]
+
+Do NOT touch the existing [[Guelph/Address_Import]] catalogue entry, if there is one —
+that row belongs to the 2025 import and its author. If the catalogue has no row for it,
+leave that alone too; adding one on their behalf is not ours to do.

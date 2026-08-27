@@ -1,0 +1,152 @@
+{{Map of imports| name = Guelph Address Points
+| description = Continuous, human-reviewed gap-fill and QA of civic address points from the City of Guelph open dataset, over the completed 2025 community import.
+| user = [[https://www.openstreetmap.org/user/skfd%20imports|skfd imports]]
+| status = Proposed
+}}
+
+== Status ==
+
+* '''Stage:''' Proposed. The community feedback window opens with the publication of this page and the accompanying Community Forum announcement.
+* '''Last revised:''' 2026-08-27
+* '''Contact:''' toronto@comentality.com
+* '''OSM import account:''' [[osm:user/skfd imports|skfd imports]] — the same dedicated account used for the [[Toronto/Import/AddressPoints|Toronto address import]]. The maintainer's personal account ([[User:skfd|skfd]]) is not used for any upload from this tooling.
+* '''Discussion:''' OSM Community Forum thread (link added on publication), tagged <code>import</code> — the announcement venue under the current [[Import/Guidelines|OSM Import Guidelines]].
+* '''Tooling:''' [https://github.com/skfd/address-importer-friend address-importer-friend] (engine) + [https://github.com/skfd/guelph-address-import guelph-address-import] (this city's config) + [https://github.com/skfd/ontario-address-changes ontario-address-changes] (source tracker).
+* '''Precedent:''' this page is deliberately short. The conflation algorithm, review UI, check suite, audit log and revert plan are '''the same machinery''', unchanged, as [[Toronto/Import/AddressPoints]] — reviewed by the community in May 2026 and used for 1,297 production changesets. That page is the long-form reference; this one records only what is different about Guelph.
+
+== Credit where it is due ==
+
+Guelph's civic addresses were '''already imported''', solo, by [https://www.openstreetmap.org/user/ARandomThumbtack_Import ARandomThumbtack_Import] between 2025-09-16 and 2025-10-23, from the same City of Guelph open dataset, documented at [[Guelph/Address_Import]] and finished ahead of their own self-imposed deadline. It is careful, well-tagged work: the changesets carry <code>import=yes</code>, <code>import:page</code>, <code>source</code> and <code>source:license</code>, which is more than most bulk address edits in Ontario manage, and it is the reason Guelph is one of only two municipalities in a 42-dataset Ontario survey with address coverage above 90%.
+
+'''Thank you.''' This proposal exists because that import worked, not because it did not. Nothing here revisits, re-imports or supersedes it — [[Guelph/Address_Import]] remains the record of the original import and belongs to its author. What follows is maintenance layered on top of finished work, and the original importer is invited onto the reviewer roster below.
+
+== What is proposed ==
+
+'''Continuous''', human-reviewed gap-fill of the civic addresses the City publishes and OSM does not yet have, re-run each time the City's dataset changes — plus the QA findings that fall out of running conflation over a city that is already mapped.
+
+That is the difference from Toronto, and it is the whole point of this page:
+
+* Toronto was a '''one-time''' import of half a million missing addresses into a city that had almost none.
+* Guelph is '''already complete'''. The valuable product is not an initial upload; it is staying in sync with the City afterwards, which is what nobody is signed up to do today.
+
+=== Scope ===
+
+Measured against source snapshot 39 (2026-08-13): 53,846 active source rows, collapsing to '''40,634 civic addresses'''.
+
+{| class="wikitable"
+! Item !! Figure !! Disposition
+|-
+| Civic addresses missing from OSM || '''2,523''' of 40,634 (6.2%) || Candidates for upload; hand-measured via Overpass, 2026-08-10. Diffuse — there is no unmapped district. These are the tail the original import parked in <code>RemainingAddresses.osm</code>, plus everything the City has published since October 2025.
+|-
+| New addresses per City update || small, unknown || The recurring workload this proposal is actually about. Tracked snapshot-to-snapshot by <code>ontario-address-changes</code>.
+|-
+| Unit-level addresses || 13,162 source unit rows vs 6,289 <code>addr:unit</code> in OSM || '''Out of scope.''' Source rows are collapsed to one candidate per civic address (<code>[units] policy = "collapse-to-civic"</code>). The gap is reported to the community as a QA finding, not imported.
+|-
+| Street-name disagreements || to be reported || Output of the <code>nearby_street_mismatch</code> check. Reported, never auto-corrected.
+|-
+| OSM-only addresses || to be reported || Addresses OSM has and the City source does not. '''Never deleted''' — see non-goals.
+|}
+
+=== Goals ===
+
+* Keep OSM's Guelph civic-address coverage current against the City's roster, continuously, rather than as a one-off.
+* Surface disagreements between OSM and the City source — street names, positions, duplicates — to local mappers as reviewable findings.
+* Preserve a per-candidate audit trail (source row → verdict → reviewer decision → changeset id → resulting OSM id), as in Toronto.
+
+=== Non-goals ===
+
+Identical to [[Toronto/Import/AddressPoints#Goals and non-goals|§ Non-goals of the Toronto import]], and they carry extra weight here because this city is somebody else's finished work:
+
+* '''No deletions''', including addresses the City source no longer lists.
+* '''No mutation of existing OSM objects''' — this creates new nodes only. In particular, no re-tagging of the 2025 import's nodes.
+* '''No unit-level import''', no <code>addr:interpolation</code> cleanup, no polygons, no geometry editing.
+
+== Import data ==
+
+* '''Dataset:''' City of Guelph address points, [https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore explore.guelph.ca] — the same dataset the 2025 import used.
+* '''Licence:''' OGL-Canada-2.0, as recorded by the prior import. ODbL-compatible: permissive attribution, no share-alike, no non-commercial clause. Attribution is satisfied by the <code>source</code> tag on the node and on the containing changeset.
+* '''Consumption path:''' the City feed is snapshotted into SQLite by [https://github.com/skfd/ontario-address-changes ontario-address-changes], which diffs consecutive snapshots. That diff is what makes "continuous" cheap — each cycle re-conflates the whole city, but the review queue is normally only what changed.
+* '''OSM side:''' Geofabrik Ontario PBF, re-pulled before each cycle. If more than 24 h elapse between conflation and upload, re-fetch and re-conflate.
+* '''Review partition:''' the City's 23 "Guelph Areas" community polygons (<code>AREA_NAME</code>), covering 99.47% of source points. The 287 orphans are city-edge cases plus the 75 <code>Guelph/Eramosa Twp</code> rows, which lie outside the city fabric by construction and are held back — see § Open questions.
+
+== Tagging plan ==
+
+Only the '''deltas''' from [[Toronto/Import/AddressPoints#Tagging plan|§ Tagging plan of the Toronto import]] are listed. All uploaded elements are nodes; no ways, no relations.
+
+{| class="wikitable"
+! Tag !! Value !! Note
+|-
+| <code>addr:housenumber</code> || source <code>STREETNO</code> || As Toronto.
+|-
+| <code>addr:street</code> || source <code>FULLNAME</code> || Already in OSM long form ("Cork Street West") on 100% of rows — the suffix-expansion step Toronto needed is a no-op here.
+|-
+| <code>addr:city</code> || <code>Guelph</code> || '''Delta from Toronto''', which omits <code>addr:city</code>. Emitted here to stay consistent with the 2025 import, which wrote it on every node.
+|-
+| <code>addr:province</code> || <code>Ontario</code> || '''Delta from Toronto''', which omits province per Canadian convention. Written by the 2025 import and dominant in Guelph's OSM data today (3,699 <code>Ontario</code> against 178 <code>ON</code> in the sampled elements). See § Open questions.
+|-
+| <code>addr:postcode</code> || enrichment only || Written only when a same-address POI already in OSM carries one. Never invented, never extrapolated.
+|-
+| <code>source</code> || <code>City of Guelph Open Data</code> || On the node and on the changeset.
+|}
+
+Deliberately '''not''' emitted: <code>addr:unit</code> (see scope), <code>addr:ward</code> (the source's 1–6 ward integer is modelled better as an admin polygon), <code>addr:housename</code>, <code>addr:country</code>, and any city-specific custom namespace.
+
+=== Changeset tags ===
+
+{| class="wikitable"
+! Tag !! Value
+|-
+| <code>comment</code> || <code>Guelph Open Data address import, run=&lt;run_name&gt;</code>
+|-
+| <code>source</code> || <code>City of Guelph Open Data</code>
+|-
+| <code>source:license</code> || <code>OGL-Canada-2.0</code>
+|-
+| <code>import</code> || <code>yes</code>
+|-
+| <code>bot</code> || <code>no</code>
+|-
+| <code>created_by</code> || <code>address-importer-friend</code>
+|-
+| <code>import_plan</code> || <code>https://wiki.openstreetmap.org/wiki/Guelph/Import/AddressPoints</code>
+|}
+
+'''On "continuous" and <code>bot=no</code>:''' every batch is a separate, operator-triggered run whose candidates are reviewed one at a time in the local web UI before any changeset is opened. Nothing uploads on a timer and nothing uploads unreviewed. The recurring part is the ''conflation'', which is read-only; the ''upload'' is a human decision every time. These are therefore imports under the [[Import/Guidelines|Import Guidelines]] — <code>import=yes</code>, <code>bot=no</code> — and not automated edits under the [[Automated Edits code of conduct|Automated Edits code of conduct]]. If that ever stops being true, this page changes before the behaviour does.
+
+== Process ==
+
+Per cycle, triggered by a change in the source data rather than by a calendar:
+
+# <code>ontario-address-changes</code> takes a City snapshot and diffs it against the previous one.
+# Fresh OSM extract; full-city conflation — not diff-only, because a maintenance-only mode inherits prior errors invisibly.
+# Candidates land in the review queue by area tile, annotated by the check suite (<code>match_far</code>, <code>city_duplicate</code>, <code>nearby_street_mismatch</code>, <code>missing_sample</code>).
+# Human review in the local web UI. Every candidate is approved or rejected by a named reviewer.
+# Upload, one changeset per tile, at most one changeset per minute.
+# QA findings that are '''not''' uploads — street-name disagreements, duplicates, OSM-only addresses — are posted to the forum thread for local mappers, not acted on unilaterally.
+
+'''Roll-out:''' one pilot tile first, published on the forum thread with its counts and its changeset, then a one-week hold before the remaining areas. First cycle only; subsequent cycles are ordinary maintenance batches.
+
+=== Reviewer roster ===
+
+* Primary maintainer and first-line reviewer: toronto@comentality.com.
+* [https://www.openstreetmap.org/user/ARandomThumbtack_Import ARandomThumbtack_Import] is invited as a reviewer, with a standing veto over anything touching Guelph addresses.
+* Local Guelph mappers: contact the address above, or reply on the forum thread.
+* No run is uploaded without at least one named reviewer's approval in the UI.
+
+== Revert plan ==
+
+As [[Toronto/Import/AddressPoints#Revert plan|§ Revert plan of the Toronto import]]. Every upload is a distinct changeset from a dedicated account, with a per-run manifest of <code>(source_id, address, osm_node_id, changeset_id)</code>, so any batch can be reverted in isolation without touching neighbouring work. Because this import creates nodes only and never modifies existing objects, a revert cannot damage the 2025 import or any organic mapping.
+
+== Open questions for the community ==
+
+# '''<code>addr:province=Ontario</code>.''' The 2025 import wrote it as a constant; the Toronto import omits province per Canadian convention; Guelph's OSM data is now overwhelmingly tagged with it. Local consistency and provincial convention point in opposite directions. The current plan is to follow local consistency and keep writing it — objections welcome, and this is the single tagging decision most worth arguing about.
+# '''The 75 <code>Guelph/Eramosa Twp</code> rows.''' The City publishes them past its own boundary, and Wellington County publishes the same addresses. Held back until someone says which source should own them.
+# '''The unit gap.''' 6,289 of 13,162 source unit rows are in OSM. Is unit-level import wanted in Guelph at all — and if so, as a separate proposal?
+# '''Cadence and quiet.''' How often should a maintenance batch be announced on the forum thread: every batch, or a periodic summary?
+
+== References ==
+
+* [[Guelph/Address_Import]] — the 2025 import by ARandomThumbtack_Import; the record of the work this builds on.
+* [[Toronto/Import/AddressPoints]] — the long-form proposal for the same tooling: conflation, checks, review UI, audit log and revert plan in full.
+* [[Import/Guidelines]], [[Import/Catalogue]], [[Automated Edits code of conduct]].
+* [https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore City of Guelph address points] — source dataset.

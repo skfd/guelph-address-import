@@ -1,14 +1,26 @@
 # guelph-address-import
 
 The **Guelph city checkout** of the address-import family — city #3,
-scaffolded 2026-08-15. Status: **onboarding, brownfield-complete**. This city
-is a QA/conflation target, not an import target: `ARandomThumbtack_Import`
-imported Guelph's addresses solo in 2025 (first changeset 2025-09-16, declared
-complete 2025-10-23 on the
+scaffolded 2026-08-15. Status: **pre-start, drafts written, nothing published**.
+`ARandomThumbtack_Import` imported Guelph's addresses solo in 2025 (first
+changeset 2025-09-16, declared complete 2025-10-23 on the
 [wiki page](https://wiki.openstreetmap.org/wiki/Guelph/Address_Import)),
 leaving only ~2,523 of 40,634 civic addresses missing (6.2%, diffuse — 2026-08-10
-survey). The right first move is to contact them with the diff and offer the
-tooling as a QA layer over work they own — **not** an import proposal.
+survey). What is proposed here is **continuous gap-fill and QA over that
+finished import**, not a re-import: create-only, human-reviewed per batch,
+re-run when the City publishes.
+
+Announcement drafts live in this repo and are **unpublished**. Send them in this
+order:
+
+1. `CONTACT_PRIOR_IMPORTER.md` — OSM message to `ARandomThumbtack_Import`
+   first, thanking them and offering the tooling. Wait for a reply.
+2. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Import/AddressPoints`
+   (deliberately short; defers to `Toronto/Import/AddressPoints` for the shared
+   machinery). Their `Guelph/Address_Import` page is theirs — link, never edit.
+3. `WIKI_CATALOGUE_ENTRY.mediawiki` — the [[Import/Catalogue]] row, same sitting.
+4. `FORUM_ANNOUNCEMENT.md` — Community Forum topic, tagged `import`, opening the
+   14-day feedback window.
 
 The pipeline lives in the engine repo,
 [`address-importer-friend`](https://github.com/skfd/address-importer-friend)
