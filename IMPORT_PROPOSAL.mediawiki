@@ -12,7 +12,10 @@
 * '''OSM import account:''' [[osm:user/skfd imports|skfd imports]] — the same dedicated account used for the [[Toronto/Import/AddressPoints|Toronto address import]]. The maintainer's personal account ([[User:skfd|skfd]]) is not used for any upload from this tooling.
 * '''Discussion:''' [https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103 OSM Community Forum thread #135103] — the 2025 import's own thread, tagged <code>import</code> / <code>import-proposal</code>, where this proposal was announced rather than in a new topic. The announcement venue under the current [[Import/Guidelines|OSM Import Guidelines]].
 * '''Tooling:''' [https://github.com/skfd/address-importer-friend address-importer-friend] (engine) + [https://github.com/skfd/guelph-address-import guelph-address-import] (this city's config) + [https://github.com/skfd/ontario-address-changes ontario-address-changes] (source tracker).
-* '''Precedent:''' this page is deliberately short. The conflation algorithm, review UI, check suite, audit log and revert plan are '''the same machinery''', unchanged, as [[Toronto/Import/AddressPoints]] — reviewed by the community in May 2026 and used for 1,297 production changesets. That page is the long-form reference; this one records only what is different about Guelph.
+* '''What this page is:''' a '''continuation''', not an initial import proposal — and short for two reasons, both of them deference rather than brevity for its own sake.
+** '''Guelph's address import already has a page.''' [[Guelph/Address_Import]] establishes the dataset, the licence, the tag mapping and the community consent, and it is not superseded by this one. Everything settled there stays settled; this page records only what changes when upkeep becomes continuous and passes to a different maintainer.
+** '''The machinery already has a page.''' The conflation algorithm, review UI, check suite, audit log and revert plan are unchanged from [[Toronto/Import/AddressPoints]] — reviewed by the community in May 2026 and used for 1,297 production changesets.
+: So: read [[Guelph/Address_Import]] for ''what Guelph's import is'', [[Toronto/Import/AddressPoints]] for ''how the tooling works'', and this page for ''what is different now''. A reader who needs neither should be able to finish this page in a few minutes.
 
 == Credit where it is due ==
 
@@ -28,10 +31,9 @@ ARandomThumbtack was contacted before this page was written and is content for t
 
 Alongside it, and consented separately, '''two one-off mechanical tag cleanups''' on Guelph's existing address objects: removing <code>addr:province=Ontario</code>, and splitting the unit back out of double-encoded housenumbers. Both are described in [[#Mechanical edits|§ Mechanical edits]]. They are not part of the import path and nothing in the import depends on them landing.
 
-That is the difference from Toronto, and it is the whole point of this page:
+Guelph's import is '''finished'''. There is no initial upload left to argue about — the questions an initial proposal exists to settle (is the dataset suitable, is the licence compatible, does the community want it) were asked and answered on [[Guelph/Address_Import]] in September 2025. What was never settled is who keeps it current afterwards, and that is the only thing this page proposes.
 
-* Toronto was a '''one-time''' import of half a million missing addresses into a city that had almost none.
-* Guelph is '''already complete'''. The valuable product is not an initial upload; it is staying in sync with the City afterwards, which is what nobody is signed up to do today.
+The contrast with [[Toronto/Import/AddressPoints]] is the same distinction: Toronto was a one-time import of half a million addresses into a city that had almost none, and its page is long because everything was open. Here almost nothing is.
 
 === Scope ===
 
@@ -67,15 +69,15 @@ As [[Toronto/Import/AddressPoints#Goals and non-goals|§ Non-goals of the Toront
 
 == Import data ==
 
-* '''Dataset:''' City of Guelph address points, [https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore explore.guelph.ca] — the same dataset the 2025 import used.
-* '''Licence:''' OGL-Canada-2.0, as recorded by the prior import. ODbL-compatible: permissive attribution, no share-alike, no non-commercial clause. Attribution is satisfied by the <code>source</code> tag on the node and on the containing changeset.
+'''Dataset and licence are unchanged from [[Guelph/Address_Import]]''' and are not re-litigated here: City of Guelph address points ([https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore explore.guelph.ca]) under OGL-Canada-2.0, which that proposal established as ODbL-compatible. Attribution is satisfied by the <code>source</code> tag on the node and on the containing changeset, as before. What follows is only what a ''continuous'' consumer adds.
+
 * '''Consumption path:''' the City feed is snapshotted into SQLite by [https://github.com/skfd/ontario-address-changes ontario-address-changes], which diffs consecutive snapshots. That diff is what makes "continuous" cheap — each cycle re-conflates the whole city, but the review queue is normally only what changed.
 * '''OSM side:''' Geofabrik Ontario PBF, re-pulled before each cycle. If more than 24 h elapse between conflation and upload, re-fetch and re-conflate.
 * '''Review partition:''' the City's 23 "Guelph Areas" community polygons (<code>AREA_NAME</code>), covering 99.47% of source points. The 287 orphans are city-edge cases plus the 75 <code>Guelph/Eramosa Twp</code> rows, which lie outside the city fabric by construction and are held back — see § Open questions.
 
 == Tagging plan ==
 
-Only the '''deltas''' from [[Toronto/Import/AddressPoints#Tagging plan|§ Tagging plan of the Toronto import]] are listed. All uploaded elements are nodes; no ways, no relations.
+The baseline is the tag mapping [[Guelph/Address_Import]] established in 2025, because a continuation that tags differently from the import it continues just creates two conventions in one city. It is reproduced here only where this proposal '''departs''' from it or from [[Toronto/Import/AddressPoints#Tagging plan|Toronto's plan]]. All uploaded elements are nodes; no ways, no relations.
 
 {| class="wikitable"
 ! Tag !! Value !! Note
@@ -86,7 +88,7 @@ Only the '''deltas''' from [[Toronto/Import/AddressPoints#Tagging plan|§ Taggin
 |-
 | <code>addr:city</code> || <code>Guelph</code> || '''Delta from Toronto''', which omits <code>addr:city</code>. Emitted here to stay consistent with the 2025 import, which wrote it on every node.
 |-
-| <code>addr:province</code> || ''not written'' || Omitted per Canadian convention, as in Toronto. The 2025 import wrote it as a constant; the existing tags are being removed — see § Mechanical edits.
+| <code>addr:province</code> || ''not written'' || '''The one departure from the 2025 baseline''', which wrote it as a constant. Omitted per Canadian convention, as in Toronto. This does not leave two conventions standing in one city: the existing tags are removed rather than left in place — see § Mechanical edits.
 |-
 | <code>addr:postcode</code> || enrichment only || Written only when a same-address POI already in OSM carries one. Never invented, never extrapolated.
 |-
