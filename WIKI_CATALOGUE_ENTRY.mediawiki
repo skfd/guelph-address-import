@@ -1,19 +1,87 @@
-Second wiki edit, made at the same time as publishing Guelph/Address_Import/Continuous:
-add one row to [[Import/Catalogue]], in the Canada → Ontario section, alphabetically
-before the existing Toronto row.
+Import/Catalogue edits — Toronto and Guelph, one sitting.
 
-The catalogue table's columns are (as of 2026-08-27) Name / Region / Data type /
-Status / Date / Contact — check the live table's column order before saving, it has
-changed before.
+VERIFIED against the live page 2026-08-27 via action=raw. The catalogue is
+organised by IMPORT TYPE, not by geography — an earlier draft of this file
+assumed a "Canada → Ontario" section and was wrong. Sections are:
+
+  1 Community imports
+  2 One-Time Imports              <- Toronto's row is here today
+  3 Ongoing Imports, Semi-Automated   <- where BOTH rows belong
+  4 Ongoing imports, fully scripted
+  5 Imports slated for deletion
+  6 Description of table contents
+
+Section 3's intro reads "These imports have been manually prepared or partially
+scripted:" — which is exactly what both of these are.
+
+Twelve columns, in this order:
+  Name | Data source | Area | License | Source tag | Tag prefix |
+  Status | Start date | End date | Contact | Notes | ODbL compliance
+
+
+== EDIT 1 — DELETE Toronto's row from § One-Time Imports ==
+
+Find it by the row IMMEDIATELY ABOVE it, which begins:
+
+  |[[Import des arrêts des cars Région Auvergne Rhone-Alpes depuis les données du SMMAG]]
+
+The row after that one is Toronto's. It currently reads (note the stray double
+pipe before {{User}} — a typo in the live page, not worth preserving):
+
+  |[[Toronto/Import/AddressPoints|Toronto Address Points]]
+  ...
+  |One-time, human-reviewed import of missing civic address points. [...]
+
+Delete that row and its leading |- separator. It moves to § Ongoing.
+
+
+== EDIT 2 — ADD both rows at the END of § Ongoing Imports, Semi-Automated ==
+
+Find the end by the LAST row of that table, which begins:
+
+  | [[Organised Editing/Activities/Oscar Car Rental location maintenance|Oscar Car Rental branches]]
+
+That row ends with "| {{yes}}" followed by the table's closing "|}".
+Paste both rows between that "| {{yes}}" and the "|}".
+
+(Rows in this table run roughly oldest-first by start date, so appending is
+right: Toronto is 2026-05, Guelph 2026-08, and the row above them is 2026-07.)
 
 |-
-| [[Guelph/Address_Import/Continuous|Guelph Address Points]]
-| Guelph, Ontario, Canada
-| Addresses (nodes)
-| Proposed
+|[[Toronto/Import/AddressPoints|Toronto Address Points]]
+|[https://open.toronto.ca/dataset/address-points-municipal-toronto-one-address-repository/ City of Toronto Open Data — Address Points (Municipal)]
+|Toronto, Ontario, Canada
+|[https://open.toronto.ca/open-data-license/ Open Government Licence – Toronto]
+|{{Tag|addr:source||City of Toronto Open Data}} — the 2026-05 rollout wrote {{Tag|source||City of Toronto Open Data}}
+| {{N/A}}
+| {{yes|Ongoing}}
+| 2026-05-04
+| ongoing
+|{{User|skfd|wiki=skfd|osm=skfd}}{{User|skfd imports|wiki=|osm=skfd imports}}
+|Bulk rollout of missing civic address points complete 2026-05-28 (1,297 changesets, ~449k addresses); continuously maintained against City updates since. Create-only, human-reviewed per batch. [https://community.openstreetmap.org/t/address-import-for-toronto/119368 Forum thread]
+| {{yes|yes}}
+|-
+|[[Guelph/Address Import/Continuous|Guelph Address Points (continuous)]]
+|[https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore City of Guelph Open Data — Addresses]
+|Guelph, Ontario, Canada
+|OGL-Canada-2.0
+|{{Tag|addr:source||Guelph Open Data}}
+| {{N/A}}
+| {{no|Planned}}
 | 2026-08-27
-| [[User:skfd|skfd]] / [[User:skfd imports|skfd imports]]
+| ongoing
+|{{User|skfd|wiki=skfd|osm=skfd}}{{User|skfd imports|wiki=|osm=skfd imports}}
+|Continuation of [[Guelph/Address Import|ARandomThumbtack's 2025 import]], with their agreement: continuous gap-fill of the ~2,523 civic addresses OSM lacks, plus two announced mechanical tag cleanups. Create-only, human-reviewed per batch. [https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103 Forum thread]
+| {{yes|yes}}
 
-Do NOT touch the existing [[Guelph/Address_Import]] catalogue entry, if there is one —
-that row belongs to the 2025 import and its author. If the catalogue has no row for it,
-leave that alone too; adding one on their behalf is not ours to do.
+
+== Do NOT ==
+
+Do not touch any catalogue row belonging to the 2025 Guelph import
+([[Guelph/Address Import]]) — that row, if one exists, is its author's.
+
+Do not add a row to § Community imports; there is a separate "Toronto building
+import" (Stats Canada, planned) in there which is somebody else's project.
+
+Edit summary suggestion, one edit covering both:
+  "Move Toronto Address Points to Ongoing (now continuously maintained); add Guelph Address Points"
