@@ -128,6 +128,15 @@ attribution = "Guelph Open Data"
 # is never edited or reused. Source of truth is IMPORT_PROPOSAL.mediawiki in
 # this repo; edit there and re-publish, don't diverge the wiki from it.
 import_plan = "https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous"
+# Constant tags on every node we create. The published tagging plan promises
+# addr:city=Guelph, which is where Guelph departs from the Toronto baseline
+# (Toronto deliberately writes none). addr:province stays absent — the plan
+# omits it per Canadian convention, and campaign (a) removes the ~3,699 the
+# 2025 import left behind.
+node_tags = { "addr:city" = "Guelph" }
+# The changeset names the licence the source data comes under. Promised by the
+# plan's changeset-tag table; Toronto's table has no such key.
+source_license = "OGL-Canada-2.0"
 
 # The prior import's tag mapping (05-prior-import-detection.md, "What to
 # capture in config"). NOT read by the engine yet — the [prior_import]
