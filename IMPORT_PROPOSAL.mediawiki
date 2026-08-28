@@ -140,6 +140,8 @@ As the import's changeset tags below, except <code>import=yes</code> is replaced
 | <code>created_by</code> || <code>address-importer-friend</code>
 |-
 | <code>import_plan</code> || <code>https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous</code>
+|-
+| <code>import:client_token</code> || random per-run UUID — used only for server-side idempotent retry after a network failure; looked up before reopening a changeset so a dropped connection never results in two parallel uploads of the same run. As [[Toronto/Import/AddressPoints#Changeset tags|Toronto]].
 |}
 
 '''On "continuous" and <code>bot=no</code>:''' every batch is a separate, operator-triggered run whose candidates are reviewed one at a time in the local web UI before any changeset is opened. Nothing uploads on a timer and nothing uploads unreviewed. The recurring part is the ''conflation'', which is read-only; the ''upload'' is a human decision every time. These are therefore imports under the [[Import/Guidelines|Import Guidelines]] — <code>import=yes</code>, <code>bot=no</code> — and not automated edits under the [[Automated Edits code of conduct|Automated Edits code of conduct]]. If that ever stops being true, this page changes before the behaviour does.
