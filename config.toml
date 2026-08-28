@@ -114,7 +114,13 @@ changesets_per_minute = 1
 changeset_comment_template = "{city} Open Data address import, run={run_name}"
 
 [export]
-attribution = "City of Guelph Open Data"
+# Verbatim the 2025 import's string (their changesets carry
+# source=Guelph Open Data), NOT the "City of ..." form Toronto uses. One city,
+# one attribution value: a reader filtering Guelph's address provenance should
+# get one answer, not two spellings of it. The *key* deliberately does not
+# match theirs — the engine writes addr:source on nodes and source on the
+# changeset; see the wiki page's tagging plan for why.
+attribution = "Guelph Open Data"
 # Empty until the wiki page is actually published (2026-08-27: drafted in
 # IMPORT_PROPOSAL.mediawiki, not posted). The engine must not stamp
 # import_plan on a changeset pointing at a page that does not exist yet.

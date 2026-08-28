@@ -94,7 +94,7 @@ The baseline is the tag mapping [[Guelph/Address_Import]] established in 2025, b
 |-
 | <code>addr:postcode</code> || enrichment only || Written only when a same-address POI already in OSM carries one. Never invented, never extrapolated.
 |-
-| <code>addr:source</code> || <code>City of Guelph Open Data</code> || '''Not a bare <code>source</code>''': it sources the ''address'', sits in the <code>addr:*</code> namespace alongside the tags it explains, and survives a later merge into a building polygon without appearing to source the building. The changeset keeps the plain <code>source</code> key — that one describes the edit. Toronto's import wrote a bare <code>source</code> on its nodes and has a [[Toronto/Import/AddressPoints#Post-import follow-ups (scoped separately)|scoped follow-up]] to correct them; Guelph starts correct instead of accruing the same debt.
+| <code>addr:source</code> || <code>Guelph Open Data</code> || '''Not a bare <code>source</code>''': it sources the ''address'', sits in the <code>addr:*</code> namespace alongside the tags it explains, and survives a later merge into a building polygon without appearing to source the building. The changeset keeps the plain <code>source</code> key — that one describes the edit. Toronto's import wrote a bare <code>source</code> on its nodes and has a [[Toronto/Import/AddressPoints#Post-import follow-ups (scoped separately)|scoped follow-up]] to correct them; Guelph starts correct instead of accruing the same debt. The '''value''' is the 2025 import's own string, verbatim — one city should have one attribution value, not two spellings of it — while the '''key''' is the corrected one.
 |}
 
 Deliberately '''not''' emitted: <code>addr:unit</code> (see scope), <code>addr:province</code> (above), <code>addr:ward</code> (the source's 1–6 ward integer is modelled better as an admin polygon), <code>addr:housename</code>, <code>addr:country</code>, <code>addr:full</code> (tested 2026-08-21: Nominatim discards it, so it is a pure duplicate of the structured tags), and any city-specific custom namespace.
@@ -129,7 +129,7 @@ As the import's changeset tags below, except <code>import=yes</code> is replaced
 |-
 | <code>comment</code> || <code>Guelph Open Data address import, run=&lt;run_name&gt;</code>
 |-
-| <code>source</code> || <code>City of Guelph Open Data</code>
+| <code>source</code> || <code>Guelph Open Data</code>
 |-
 | <code>source:license</code> || <code>OGL-Canada-2.0</code>
 |-
