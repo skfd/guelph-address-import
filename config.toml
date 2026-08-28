@@ -121,15 +121,13 @@ changeset_comment_template = "{city} Open Data address import, run={run_name}"
 # match theirs — the engine writes addr:source on nodes and source on the
 # changeset; see the wiki page's tagging plan for why.
 attribution = "Guelph Open Data"
-# Empty until the wiki page is actually published (2026-08-27: drafted in
-# IMPORT_PROPOSAL.mediawiki, not posted). The engine must not stamp
-# import_plan on a changeset pointing at a page that does not exist yet.
-# On publication set this to:
-#   https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous
-# NOT the prior import's page (Guelph/Address_Import) — that belongs to its
-# author, is linked from ours, and is never edited or reused. Publication order
-# and the one-week wait after CONTACT_PRIOR_IMPORTER.md are in the README.
-import_plan = ""
+# Our page, published 2026-08-27 and confirmed live before this was set — the
+# engine stamps this on every changeset, so it must never point at a page that
+# does not exist. Deliberately NOT the prior import's page
+# (Guelph/Address_Import): that belongs to its author, is linked from ours, and
+# is never edited or reused. Source of truth is IMPORT_PROPOSAL.mediawiki in
+# this repo; edit there and re-publish, don't diverge the wiki from it.
+import_plan = "https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous"
 
 # The prior import's tag mapping (05-prior-import-detection.md, "What to
 # capture in config"). NOT read by the engine yet — the [prior_import]

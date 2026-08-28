@@ -1,7 +1,8 @@
 # guelph-address-import
 
 The **Guelph city checkout** of the address-import family — city #3,
-scaffolded 2026-08-15. Status: **pre-start, drafts written, nothing published**.
+scaffolded 2026-08-15. Status: **wiki page live, feedback window open, nothing
+uploaded**.
 `ARandomThumbtack_Import` imported Guelph's addresses solo in 2025 (first
 changeset 2025-09-16, declared complete 2025-10-23 on the
 [wiki page](https://wiki.openstreetmap.org/wiki/Guelph/Address_Import)),
@@ -25,17 +26,25 @@ scaffold docs predate:
 - We have already edited Guelph addresses: changesets 187773424, 187776928,
   187822533 fixed all 29 `addr:unit`-only objects (2026-08-21/22).
 
-Remaining drafts, unpublished, in this order:
+Publication state:
 
-1. `IMPORT_PROPOSAL.mediawiki` — wiki page `Guelph/Address_Import/Continuous`
-   (deliberately short; defers to `Toronto/Import/AddressPoints` for the shared
-   machinery). Their `Guelph/Address_Import` page is theirs — link, never edit.
-2. `WIKI_CATALOGUE_ENTRY.mediawiki` — the `Import/Catalogue` row, same sitting.
-3. `FORUM_ANNOUNCEMENT.md` — a **reply on thread #135103**, posted once the wiki
-   page is live so its link resolves. It also withdraws the `addr:full`
-   suggestion left in post #13, which was tested against Nominatim and does not
-   work. That withdrawal is the time-sensitive part: it is currently the last
-   word in the thread.
+1. ✅ `IMPORT_PROPOSAL.mediawiki` — **published 2026-08-27** as
+   [`Guelph/Address_Import/Continuous`](https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous),
+   a subpage of the 2025 import because this continues it. Deliberately short:
+   defers to `Guelph/Address_Import` for the import itself and to
+   `Toronto/Import/AddressPoints` for the shared machinery. **This file stays
+   the source of truth** — edit here and re-publish rather than letting the
+   wiki and the repo diverge. Their page is theirs: link, never edit.
+2. ✅ `config.toml` `[export] import_plan` set to that live URL. The engine
+   refuses to open a changeset while it is empty, so this gated every upload.
+3. ⬜ `WIKI_CATALOGUE_ENTRY.mediawiki` — two `Import/Catalogue` edits: move
+   Toronto's row out of § One-Time Imports (it is continuous now too) and add
+   both rows to § Ongoing Imports, Semi-Automated.
+4. ⬜ `FORUM_ANNOUNCEMENT.md` — a **reply on thread #135103**. It also withdraws
+   the `addr:full` suggestion left in post #13, which was tested against
+   Nominatim and does not work; that withdrawal is the time-sensitive part,
+   being currently the last word in the thread. The 14-day window in the draft
+   runs from the day it is posted — check the hardcoded 2026-09-10 still fits.
 
 Two **mechanical edits** ride along with the proposal, announced with it but
 consented separately under the Automated Edits code of conduct:
