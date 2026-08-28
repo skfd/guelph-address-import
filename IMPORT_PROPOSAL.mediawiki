@@ -10,7 +10,7 @@
 
 * '''Stage:''' Proposed. The community feedback window opens with the publication of this page and the accompanying Community Forum announcement.
 * '''Last revised:''' 2026-08-27
-* '''Contact:''' toronto@comentality.com
+* '''Contact:''' guelph@comentality.com
 * '''OSM import account:''' [[osm:user/skfd imports|skfd imports]] — the same dedicated account used for the [[Toronto/Import/AddressPoints|Toronto address import]]. The maintainer's personal account ([[User:skfd|skfd]]) is not used for any upload from this tooling.
 * '''Discussion:''' [https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103 OSM Community Forum thread #135103] — the 2025 import's own thread, tagged <code>import</code> / <code>import-proposal</code>, where this proposal was announced rather than in a new topic. The announcement venue under the current [[Import/Guidelines|OSM Import Guidelines]].
 * '''Tooling:''' [https://github.com/skfd/address-importer-friend address-importer-friend] (engine) + [https://github.com/skfd/guelph-address-import guelph-address-import] (this city's config) + [https://github.com/skfd/ontario-address-changes ontario-address-changes] (source tracker).
@@ -71,7 +71,7 @@ As [[Toronto/Import/AddressPoints#Goals and non-goals|§ Non-goals of the Toront
 
 == Import data ==
 
-'''Dataset and licence are unchanged from [[Guelph/Address_Import]]''' and are not re-litigated here: City of Guelph address points ([https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore explore.guelph.ca]) under OGL-Canada-2.0, which that proposal established as ODbL-compatible. Attribution is satisfied by the <code>source</code> tag on the node and on the containing changeset, as before. What follows is only what a ''continuous'' consumer adds.
+'''Dataset and licence are unchanged from [[Guelph/Address_Import]]''' and are not re-litigated here: City of Guelph address points ([https://explore.guelph.ca/datasets/cityofguelph::addresses-1/explore explore.guelph.ca]) under OGL-Canada-2.0, which that proposal established as ODbL-compatible. Attribution is satisfied by <code>addr:source</code> on the node and <code>source</code> on the containing changeset (see § Tagging plan for why the node key differs from the 2025 import's). What follows is only what a ''continuous'' consumer adds.
 
 * '''Consumption path:''' the City feed is snapshotted into SQLite by [https://github.com/skfd/ontario-address-changes ontario-address-changes], which diffs consecutive snapshots. That diff is what makes "continuous" cheap — each cycle re-conflates the whole city, but the review queue is normally only what changed.
 * '''OSM side:''' Geofabrik Ontario PBF, re-pulled before each cycle. If more than 24 h elapse between conflation and upload, re-fetch and re-conflate.
@@ -94,7 +94,7 @@ The baseline is the tag mapping [[Guelph/Address_Import]] established in 2025, b
 |-
 | <code>addr:postcode</code> || enrichment only || Written only when a same-address POI already in OSM carries one. Never invented, never extrapolated.
 |-
-| <code>source</code> || <code>City of Guelph Open Data</code> || On the node and on the changeset.
+| <code>addr:source</code> || <code>City of Guelph Open Data</code> || '''Not a bare <code>source</code>''': it sources the ''address'', sits in the <code>addr:*</code> namespace alongside the tags it explains, and survives a later merge into a building polygon without appearing to source the building. The changeset keeps the plain <code>source</code> key — that one describes the edit. Toronto's import wrote a bare <code>source</code> on its nodes and has a [[Toronto/Import/AddressPoints#Post-import follow-ups (scoped separately)|scoped follow-up]] to correct them; Guelph starts correct instead of accruing the same debt.
 |}
 
 Deliberately '''not''' emitted: <code>addr:unit</code> (see scope), <code>addr:province</code> (above), <code>addr:ward</code> (the source's 1–6 ward integer is modelled better as an admin polygon), <code>addr:housename</code>, <code>addr:country</code>, <code>addr:full</code> (tested 2026-08-21: Nominatim discards it, so it is a pure duplicate of the structured tags), and any city-specific custom namespace.
@@ -137,7 +137,7 @@ As the import's changeset tags below, except <code>import=yes</code> is replaced
 |-
 | <code>bot</code> || <code>no</code>
 |-
-| <code>created_by</code> || <code>t2-address-import</code>
+| <code>created_by</code> || <code>address-importer-friend</code>
 |-
 | <code>import_plan</code> || <code>https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous</code>
 |}

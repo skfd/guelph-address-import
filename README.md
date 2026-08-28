@@ -54,13 +54,12 @@ Neither is on the import path, and the import does not wait on them.
 **Blockers before the pilot upload** (not before publishing — the wiki page
 states intent):
 
-- The engine writes only `addr:housenumber`, `addr:street`, `source` and the
-  enriched `addr:postcode` (`t2/conflate.py`), and no `source:license` on the
-  changeset (`t2/osm_export.py`). The wiki tagging table promises
-  `addr:city=Guelph` too. Constant node tags plus a changeset `source:license`
-  are an engine change that must land first, or the pilot contradicts its own
-  published tagging plan. (Dropping `addr:province` removed one of the two
-  constants this used to need.)
+- The engine writes `addr:housenumber`, `addr:street`, `addr:source` and the
+  enriched `addr:postcode`, and no `source:license` on the changeset. Still
+  missing for Guelph: the constant `addr:city=Guelph`, and the changeset
+  `source:license`. (Dropping `addr:province` removed one of the two constants
+  this used to need; `addr:source` and `created_by=address-importer-friend`
+  landed in the engine 2026-08-27.)
 - The engine has **no tag-modification path at all** — it creates nodes. Both
   mechanical edits need one, with per-object version checking and prior-value
   capture. Or run them from JOSM, neighbourhood by neighbourhood, as the 2025
