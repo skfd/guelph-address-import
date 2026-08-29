@@ -67,6 +67,20 @@ policy = "collapse-to-civic"
 [status]
 active_values = ["Active"]
 
+# Operator-facing chrome — where the tool's header and footer point for Guelph.
+# Omitted keys are simply not shown (before 2026-08-29 every city was shown
+# Toronto's repo, thread and licence). No `open_data` here: Guelph's licence is
+# the Open Government Licence - City of Guelph, but no canonical URL for it is
+# recorded anywhere in the family, so the footer falls back to the [export]
+# attribution string unlinked rather than to a guessed link.
+[links]
+repo = "https://github.com/skfd/guelph-address-import"
+# The announcement thread, #135103, opened 2026-08-27.
+discussion = "https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103"
+# Our wiki page — the same one [export] import_plan stamps on every changeset.
+# Deliberately NOT the prior import's page, which belongs to its author.
+proposal = "https://wiki.openstreetmap.org/wiki/Guelph/Address_Import/Continuous"
+
 [run_defaults]
 # Small downtown rectangle (around St. George's Square) for first test runs.
 bbox = [43.538, -80.256, 43.550, -80.244]
