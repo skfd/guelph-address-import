@@ -136,14 +136,42 @@ numbers:**
   distinguish a new house from a moved point. Its 2026-07-16 event (+94/−89,
   nothing carried over) is 89 edits plus 5 real additions, not 94 new addresses.
   The City's `+58/−101` is exact. **Only the net figures compare cleanly.**
-- **Most of the City's extra republishing is noise.** Of its 30 byte-level
-  change events, **five are full rewrites** where every one of the ~53,800 rows
-  is re-versioned. All five are export-schema churn: 2026-08-09 dropped the
-  `LABEL`, `LONG`, `LAT`, `ADDLEG`, `UTM_X` and `UTM_Y` properties from all
-  53,846 rows without touching a single coordinate or house number. The large
-  non-rewrite events are land-registry housekeeping: 2026-06-18 changed `PIN`
-  on 540 rows and geometry on 10; 2026-07-05 changed `PIN` on 60 rows and
-  nothing else. None of it reaches an OSM tag.
+- **Most of the City's extra republishing is noise — but the City's *schema* is
+  not stable.** Of its 30 byte-level change events, **five are full rewrites**
+  where every one of the ~53,800 rows is re-versioned. All five were diffed, and
+  all five are columns appearing or disappearing, with no house number, street
+  or coordinate touched:
+
+  | Date | What changed on all ~53,800 rows |
+  |---|---|
+  | 2026-07-24 | `STATION_RESPONSE_ORDER` **added** |
+  | 2026-07-29 | `STATION_RESPONSE_ORDER` **removed** again |
+  | 2026-08-04 | `AMAID` **removed** |
+  | 2026-08-09 | `LABEL`, `LONG`, `LAT`, `ADDLEG`, `UTM_X`, `UTM_Y` **removed** |
+  | 2026-08-30 | `ADDID_TEXT` **added** |
+
+  Five schema edits in five weeks, one of them added and reverted inside five
+  days. Nothing this project reads (`PLACE`, `WARD`, `STATUS`, `UNIT_NO`)
+  has moved, but `[source_fields]` is pointed at a layer whose columns are
+  currently in flux — worth a config check after any full-rewrite event rather
+  than assuming it is cosmetic.
+
+  The large non-rewrite events are land-registry housekeeping: 2026-06-18
+  changed `PIN` on 540 rows and geometry on 10; 2026-07-05 changed `PIN` on 60
+  rows and nothing else. None of that reaches an OSM tag.
+
+- **Geometry does move, though rarely.** 708 of 53,947 City address IDs (1.3%)
+  changed coordinates at some point in the window, almost all of them in one
+  event: 2026-06-25 moved 520 points a **median 17 m** (p90 35 m, max 59 m).
+  No tag changes, so it is ignorable for create-only gap-fill — but it is not
+  float jitter, and it can flip a conflation verdict between MATCH and MISSING
+  on a re-run.
+
+- **One County "change" is not a publish at all.** Wellington's 2026-06-30
+  edit to `33 Scott Street` was reverted on 07-03, and 07-03's content hash is
+  byte-identical to 06-26's. The County's server appears to alternate copies
+  (the same A→B→A pattern recurs around 2026-07-18/08-08), so treat a lone
+  one-row County event as unconfirmed until the next poll repeats it.
 
 **Neither source has touched the disputed 75 in 80 days.** Zero of the City's 75
 township rows changed number, street, unit or coordinates across the window, and
