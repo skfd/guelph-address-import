@@ -87,9 +87,14 @@ Three concrete follow-ups, none of them blocking:
   them off only hides `2 Promenade Road` and `664 Woodlawn Road East` from
   gap-fill.
 - **`addr:city=Guelph/Eramosa Twp` on 73 objects** is a source artifact — the
-  City's `PLACE` string leaking into OSM. The township is
-  `Guelph/Eramosa`; OSM's other 177 objects in the bbox say
-  `Township of Guelph/Eramosa` (2012 CanVec). Worth folding into the
-  `addr:province` mechanical edit, which touches the same 73 objects anyway.
+  City's `PLACE` string leaking into OSM. Flagging it, not proposing it: a
+  retag of 73 objects is a *third* mechanical edit needing its own consent, not
+  a rider on the `addr:province` removal, and the right value is not settled.
+  `addr:city` is the postal community, not the municipality, so neither
+  `Guelph/Eramosa` nor OSM's other 177 objects in the bbox
+  (`Township of Guelph/Eramosa`, from an old CanVec import) is obviously
+  correct — the one township row the City gives a postcode, 595 Governors Road,
+  is `N1K 1E3`, a **Guelph** FSA. Settle the value against Canada Post before
+  anyone touches these.
 - **`7667` vs `672` Speedvale Avenue East** is the one thing a survey could
   settle. Low stakes: OSM already says `672`.
