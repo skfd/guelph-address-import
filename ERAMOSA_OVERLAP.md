@@ -98,3 +98,59 @@ Three concrete follow-ups, none of them blocking:
   anyone touches these.
 - **`7667` vs `672` Speedvale Avenue East** is the one thing a survey could
   settle. Low stakes: OSM already says `672`.
+
+## Update cadence, City vs. County
+
+Measured over the same 80-day window both trackers cover, 2026-06-11 to
+2026-08-30. Poll gaps in the tables below are the tracker's, not the publishers'.
+
+**Republish cadence — the City touches its file ~3× as often.**
+
+| | City | County |
+|---|---|---|
+| Polls in the window | 46 | 65 |
+| Polls that returned changed bytes | 31 | 12 |
+| Distinct content hashes | 31 | 12 |
+| Median gap between changed bytes | 2.0 d | 3.5 d |
+| Mean gap | 2.7 d | 6.4 d (two quiet stretches: 24 d and 16 d) |
+
+**Real address cadence — near-identical, and the County adds more.** Counting
+only address IDs appearing or disappearing, not bytes:
+
+| | City | County |
+|---|---|---|
+| Events with address-ID churn | 8 | 9 |
+| Median gap between them | **5.0 d** | **5.5 d** |
+| Longest gap | 20 d | 24 d |
+| IDs added / retired | +58 / −101 | +161 / −125 |
+| Net over the window | 53,889 → 53,846 (**−43**) | 42,892 → 42,928 (**+36**) |
+
+So the answer is *yes, similar* — roughly a change a week from each, and the
+County's net growth is the larger of the two despite the smaller dataset. Rural
+subdivision beats a built-out city. **But two caveats decide how you read those
+numbers:**
+
+- **The County's ID counts are inflated.** Wellington rows are keyed on a
+  synthetic content hash (`syn:<sha1>`), the City's on the stable `ADDID`. Any
+  edit to a County row retires one key and mints another, so `+161/−125` cannot
+  distinguish a new house from a moved point. Its 2026-07-16 event (+94/−89,
+  nothing carried over) is 89 edits plus 5 real additions, not 94 new addresses.
+  The City's `+58/−101` is exact. **Only the net figures compare cleanly.**
+- **Most of the City's extra republishing is noise.** Of its 30 byte-level
+  change events, **five are full rewrites** where every one of the ~53,800 rows
+  is re-versioned. All five are export-schema churn: 2026-08-09 dropped the
+  `LABEL`, `LONG`, `LAT`, `ADDLEG`, `UTM_X` and `UTM_Y` properties from all
+  53,846 rows without touching a single coordinate or house number. The large
+  non-rewrite events are land-registry housekeeping: 2026-06-18 changed `PIN`
+  on 540 rows and geometry on 10; 2026-07-05 changed `PIN` on 60 rows and
+  nothing else. None of it reaches an OSM tag.
+
+**Neither source has touched the disputed 75 in 80 days.** Zero of the City's 75
+township rows changed number, street, unit or coordinates across the window, and
+all 73 County counterparts are still on their original row version from snapshot
+1 — no edits at all. The `672`/`7667` Speedvale conflict is not a live
+disagreement anyone is actively re-publishing; it is a fossil on both sides.
+
+Practical read for gap-fill: **poll both weekly, not daily.** A daily poll of
+the City buys column churn and parcel-ID edits; a weekly one catches everything
+that would produce a candidate.
