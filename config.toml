@@ -35,8 +35,11 @@ full_from = "number+street"
 # Wellington's dataset carries the same 73-75 addresses, the only genuine
 # source overlap found by the census). Nearly constant, so unlike Hamilton's
 # COMMUNITY it adds nothing to dedup keying — declared for review display and
-# so the township rows stay distinguishable until TODO §5 routes them to
-# Wellington.
+# so the township rows stay distinguishable. They are NOT routed to Wellington:
+# compared row-by-row 2026-08-31 (ERAMOSA_OVERLAP.md), the two sources agree on
+# all 73 addresses they share, the County does not publish 664 Woodlawn Road
+# East at all, and 73 of the 75 were already imported from this source in 2025
+# (changeset 172765115). They stay city-sourced.
 municipality = "props:PLACE"
 # Integer 1-6, populated on 53,771 rows (99.86%) — empty exactly on the 75
 # township rows. First city to declare ward since Toronto (whose WARD_NAME is

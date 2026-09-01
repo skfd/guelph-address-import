@@ -75,7 +75,21 @@ As [[Toronto/Import/AddressPoints#Goals and non-goals|§ Non-goals of the Toront
 
 * '''Consumption path:''' the City feed is snapshotted into SQLite by [https://github.com/skfd/ontario-address-changes ontario-address-changes], which diffs consecutive snapshots. That diff is what makes "continuous" cheap — each cycle re-conflates the whole city, but the review queue is normally only what changed.
 * '''OSM side:''' Geofabrik Ontario PBF, re-pulled before each cycle. If more than 24 h elapse between conflation and upload, re-fetch and re-conflate.
-* '''Review partition:''' the City's 23 "Guelph Areas" community polygons (<code>AREA_NAME</code>), covering 99.47% of source points. The 287 orphans are city-edge cases plus the 75 <code>Guelph/Eramosa Twp</code> rows, which lie outside the city fabric by construction and are held back — see § Open questions.
+* '''Review partition:''' the City's 23 "Guelph Areas" community polygons (<code>AREA_NAME</code>), covering 99.47% of source points. The 287 orphans — city-edge cases plus the 75 <code>Guelph/Eramosa Twp</code> rows, which lie outside the city fabric by construction — are reviewed as a final catch-all batch rather than skipped; see § The Guelph/Eramosa rows.
+
+=== The Guelph/Eramosa rows ===
+
+The City publishes 75 rows past its own boundary, tagged <code>PLACE='Guelph/Eramosa Twp'</code>, and Wellington County publishes the same corner. Earlier drafts of this page held them back pending a decision on which source should own them. '''That decision was already made on the ground in 2025''': 73 of the 75 are in OSM today, imported from the City source by <code>ARandomThumbtack_Import</code> in [https://www.openstreetmap.org/changeset/172765115 changeset 172765115] (2025-10-02). They are treated here as city-sourced, like the rest of the roster.
+
+A row-by-row comparison of the two sources (City snapshot 2026-08-30 against County snapshot 2026-08-29) found almost nothing to choose between them, and nothing that argues for switching:
+
+* '''73 of 75''' match exactly on <code>(number, street)</code>, with '''no''' unit and '''no''' street-name disagreement — both sources already publish OSM long form. Coordinates differ by a median of 9 m.
+* Neither source has changed any of these 75 in the 80 days both are tracked; the County's 73 are still on their first observed version.
+* Wellington publishes '''nothing''' that collides with the City's other 53,771 rows: no County row shares a <code>(number, street)</code> with a city row within 100 m. This corner is the whole of the overlap.
+* '''<code>664 Woodlawn Road East</code>''' (the Guelph Lake Sports Fields) exists in the City source only. Wellington carries no <code>Woodlawn Road East</code> at all — outside the city that road is Wellington Road 124 — and its nearest address is 662 m away. Routing these rows to the County would lose it.
+* Two of the 75 are missing from OSM and are ordinary gap-fill: <code>664 Woodlawn Road East</code> and <code>2 Promenade Road</code>.
+
+One genuine conflict remains, and it is small: the City's '''<code>672 Speedvale Avenue East</code>''' and the County's '''<code>7667 Speedvale Avenue East</code>''' are the same building, 1 m apart, under city and rural numbering. OSM already carries <code>672</code>, and Wellington itself uses city-style numbers (<code>676</code>, <code>688</code>, <code>692</code>) for the neighbours, so <code>7667</code> reads as a rural number the County never retired. A survey would settle it; nothing here depends on the answer.
 
 == Tagging plan ==
 
@@ -175,7 +189,7 @@ The import path creates nodes only, so reverting it cannot damage the 2025 impor
 == Open questions for the community ==
 
 # '''The two mechanical edits.''' § Mechanical edits states the intent; the consent is what the feedback window is for. Objections to either campaign — or to the batch size and ordering — belong on [https://community.openstreetmap.org/t/import-addresses-from-city-of-guelph-data/135103 thread #135103].
-# '''The 75 <code>Guelph/Eramosa Twp</code> rows.''' The City publishes them past its own boundary, and Wellington County publishes the same addresses. Held back until someone says which source should own them.
+# '''<code>addr:city</code> on the 73 Guelph/Eramosa objects.''' The 2025 import wrote <code>addr:city=Guelph/Eramosa Twp</code> — the City's internal <code>PLACE</code> string — on all 73 (§ The Guelph/Eramosa rows). It is not obviously wrong so much as unexamined: <code>addr:city</code> is the postal community, not the municipality, and the one row of the 75 the City gives a postcode sits in a Guelph FSA. Retagging 73 objects would be a '''third''' mechanical edit needing its own consent, so it is raised here as a question, not proposed. What should the value be — or should it be left alone?
 # '''<code>;</code>-lists and <code>addr:flats</code>.''' Roughly 800 objects carry <code>;</code>-separated housenumbers, and one carries unit ranges in <code>addr:unit</code> where <code>addr:flats</code> belongs. Both want door positions rather than a mechanical rule, so the plan is a MapRoulette challenge rather than a batch — is that wanted?
 # '''Cadence and quiet.''' How often should a maintenance batch be announced on the forum thread: every batch, or a periodic summary?
 
